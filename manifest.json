@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "name": "Calendar",
+    "description": "Calendar plugin for hollow.",
+    "author": "ryu",
+    "authorUrl": "https://github.com/Ryusufe/",
+    "dbVersion": 1,
+    "icon": "CalendarRange"
+}
