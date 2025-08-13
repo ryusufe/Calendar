@@ -43,12 +43,12 @@ var require_calendar = __commonJS({
       if (!document.getElementById("a61d331f9582408733f70e912bb1c0aa96c345757d2ec1897ae771fc6d28084d")) {
         var e = document.createElement("style");
         e.id = "a61d331f9582408733f70e912bb1c0aa96c345757d2ec1897ae771fc6d28084d";
-        e.textContent = `.calendar-control-bar_4a43598b72ee8a663d2f1c6f62276ba7_1 {
+        e.textContent = `.calendar-control-bar_15f47c47488146e10dfaca887370bc73_1 {
 	/* margin-bottom: calc(var(--spacing) * 2); */
 }
 
 
-.calendar-days-container_4a43598b72ee8a663d2f1c6f62276ba7_6 {
+.calendar-days-container_15f47c47488146e10dfaca887370bc73_6 {
 	position: relative;
 	/* overflow: hidden; */
 	width: 100%;
@@ -61,7 +61,7 @@ var require_calendar = __commonJS({
 }
 
 
-.day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19 {
+.day-slot_15f47c47488146e10dfaca887370bc73_19 {
 	position: relative;
 	height: calc(100% / 7);
 	min-height: 0%;
@@ -76,38 +76,39 @@ var require_calendar = __commonJS({
 	animation: none;
 }
 
-.day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19:not(.open):hover .day-title_4a43598b72ee8a663d2f1c6f62276ba7_34 {
+.day-slot_15f47c47488146e10dfaca887370bc73_19:not(.open):hover .day-title_15f47c47488146e10dfaca887370bc73_34 {
 	color: var(--color-secondary-95);
 }
 
-.day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19.open {
+.day-slot_15f47c47488146e10dfaca887370bc73_19.open {
 	height: 100%;
 	cursor: default;
 	border-width: 0;
-	animation: grto_4a43598b72ee8a663d2f1c6f62276ba7_1 0.6s linear;
+	animation: grto_15f47c47488146e10dfaca887370bc73_1 0.6s linear;
 }
 
 
-.day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19.opened {
+.day-slot_15f47c47488146e10dfaca887370bc73_19.opened {
 	justify-content: start;
 	align-items: start;
 	padding: 1em 0 0 0;
 }
 
-.day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19.close {
+.day-slot_15f47c47488146e10dfaca887370bc73_19.close {
 	height: 0;
 	opacity: 0;
+	pointer-events: none;
 }
 
 
 
-.day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19.opened .day-slot-content_4a43598b72ee8a663d2f1c6f62276ba7_59 {
+.day-slot_15f47c47488146e10dfaca887370bc73_19.opened .day-slot-content_15f47c47488146e10dfaca887370bc73_60 {
 	width: 100%;
 	height: 100%;
-	animation: open-up_4a43598b72ee8a663d2f1c6f62276ba7_1 0.3s linear;
+	animation: open-up_15f47c47488146e10dfaca887370bc73_1 0.3s linear;
 }
 
-.day-slot-content_4a43598b72ee8a663d2f1c6f62276ba7_59 {
+.day-slot-content_15f47c47488146e10dfaca887370bc73_60 {
 	/* margin: auto; */
 	width: fit-content;
 	height: fit-content;
@@ -115,30 +116,38 @@ var require_calendar = __commonJS({
 	flex-direction: column;
 }
 
-.day-title_4a43598b72ee8a663d2f1c6f62276ba7_34 {
+.day-title_15f47c47488146e10dfaca887370bc73_34 {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 2em;
 	color: var(--color-neutral-600);
 }
 
-.dark .day-title_4a43598b72ee8a663d2f1c6f62276ba7_34 {
+.dark .day-title_15f47c47488146e10dfaca887370bc73_34 {
 	color: var(--color-neutral-400);
 }
 
-.day-date_4a43598b72ee8a663d2f1c6f62276ba7_84 {
+.day-slot_15f47c47488146e10dfaca887370bc73_19.open_15f47c47488146e10dfaca887370bc73_34 .day-title_15f47c47488146e10dfaca887370bc73_34 {
+	color: var(--color-neutral-950);
+}
+
+.dark .day-slot_15f47c47488146e10dfaca887370bc73_19.open_15f47c47488146e10dfaca887370bc73_34 .day-title_15f47c47488146e10dfaca887370bc73_34 {
+	color: var(--color-neutral-50);
+}
+
+.day-date_15f47c47488146e10dfaca887370bc73_93 {
 	color: var(--color-secondary-30);
 }
 
 
 
-.task-checkbox_4a43598b72ee8a663d2f1c6f62276ba7_90 {}
+.task-checkbox_15f47c47488146e10dfaca887370bc73_99 {}
 
-.task-content_4a43598b72ee8a663d2f1c6f62276ba7_92 {
+.task-content_15f47c47488146e10dfaca887370bc73_101 {
 	text-decoration-color: var(--color-primary);
 }
 
-.task-content_4a43598b72ee8a663d2f1c6f62276ba7_92.checked {
+.task-content_15f47c47488146e10dfaca887370bc73_101.checked {
 	text-decoration: line-through;
 }
 
@@ -147,7 +156,7 @@ var require_calendar = __commonJS({
 
 
 
-.date-picker_4a43598b72ee8a663d2f1c6f62276ba7_105 {
+.date-picker_15f47c47488146e10dfaca887370bc73_114 {
 	appearance: none;
 	-webkit-appearance: none;
 	color: var(--color-secondary-30);
@@ -163,7 +172,7 @@ var require_calendar = __commonJS({
 }
 
 
-.cl-sepa_4a43598b72ee8a663d2f1c6f62276ba7_121 {
+.cl-sepa_15f47c47488146e10dfaca887370bc73_130 {
 
 	border: none;
 	width: 100%;
@@ -182,13 +191,27 @@ var require_calendar = __commonJS({
 
 
 
+.parent_15f47c47488146e10dfaca887370bc73_149 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
 
 
+.parent_15f47c47488146e10dfaca887370bc73_149:hover .floating-panel_15f47c47488146e10dfaca887370bc73_156 {
+	opacity: 0;
+}
 
-
-
-
-
+.floating-panel_15f47c47488146e10dfaca887370bc73_156 {
+	position: absolute;
+	top: 0;
+	opacity: 1;
+	background-color: var(--secondary-color-05);
+	width: 100%;
+	transition: opacity 0.3s ease-in-out;
+	padding: calc(var(--spacing) * 10);
+	pointer-events: none;
+}
 
 
 
@@ -205,7 +228,7 @@ var require_calendar = __commonJS({
 
 
 
-@keyframes grto_4a43598b72ee8a663d2f1c6f62276ba7_1 {
+@keyframes grto_15f47c47488146e10dfaca887370bc73_1 {
 
 	0% {
 		opacity: 1;
@@ -222,7 +245,7 @@ var require_calendar = __commonJS({
 
 }
 
-@keyframes open-up_4a43598b72ee8a663d2f1c6f62276ba7_1 {
+@keyframes open-up_15f47c47488146e10dfaca887370bc73_1 {
 
 	from {
 		opacity: 0;
@@ -237,7 +260,7 @@ var require_calendar = __commonJS({
         document.head.appendChild(e);
       }
     })();
-    module2.exports = JSON.parse('{"calendar-control-bar":"calendar-control-bar_4a43598b72ee8a663d2f1c6f62276ba7_1","calendar-days-container":"calendar-days-container_4a43598b72ee8a663d2f1c6f62276ba7_6","day-slot":"day-slot_4a43598b72ee8a663d2f1c6f62276ba7_19","day-title":"day-title_4a43598b72ee8a663d2f1c6f62276ba7_34","grto":"grto_4a43598b72ee8a663d2f1c6f62276ba7_1","day-slot-content":"day-slot-content_4a43598b72ee8a663d2f1c6f62276ba7_59","open-up":"open-up_4a43598b72ee8a663d2f1c6f62276ba7_1","day-date":"day-date_4a43598b72ee8a663d2f1c6f62276ba7_84","task-checkbox":"task-checkbox_4a43598b72ee8a663d2f1c6f62276ba7_90","task-content":"task-content_4a43598b72ee8a663d2f1c6f62276ba7_92","date-picker":"date-picker_4a43598b72ee8a663d2f1c6f62276ba7_105","cl-sepa":"cl-sepa_4a43598b72ee8a663d2f1c6f62276ba7_121"}');
+    module2.exports = JSON.parse('{"calendar-control-bar":"calendar-control-bar_15f47c47488146e10dfaca887370bc73_1","calendar-days-container":"calendar-days-container_15f47c47488146e10dfaca887370bc73_6","day-slot":"day-slot_15f47c47488146e10dfaca887370bc73_19","day-title":"day-title_15f47c47488146e10dfaca887370bc73_34","grto":"grto_15f47c47488146e10dfaca887370bc73_1","day-slot-content":"day-slot-content_15f47c47488146e10dfaca887370bc73_60","open-up":"open-up_15f47c47488146e10dfaca887370bc73_1","open":"open_15f47c47488146e10dfaca887370bc73_34","day-date":"day-date_15f47c47488146e10dfaca887370bc73_93","task-checkbox":"task-checkbox_15f47c47488146e10dfaca887370bc73_99","task-content":"task-content_15f47c47488146e10dfaca887370bc73_101","date-picker":"date-picker_15f47c47488146e10dfaca887370bc73_114","cl-sepa":"cl-sepa_15f47c47488146e10dfaca887370bc73_130","parent":"parent_15f47c47488146e10dfaca887370bc73_149","floating-panel":"floating-panel_15f47c47488146e10dfaca887370bc73_156"}');
   }
 });
 
@@ -1267,23 +1290,6 @@ function className(node, value) {
   if (value == null) node.removeAttribute("class");
   else node.className = value;
 }
-function classList(node, value, prev = {}) {
-  const classKeys = Object.keys(value || {}), prevKeys = Object.keys(prev);
-  let i, len;
-  for (i = 0, len = prevKeys.length; i < len; i++) {
-    const key = prevKeys[i];
-    if (!key || key === "undefined" || value[key]) continue;
-    toggleClassKey(node, key, false);
-    delete prev[key];
-  }
-  for (i = 0, len = classKeys.length; i < len; i++) {
-    const key = classKeys[i], classValue = !!value[key];
-    if (!key || key === "undefined" || prev[key] === classValue || !classValue) continue;
-    toggleClassKey(node, key, true);
-    prev[key] = classValue;
-  }
-  return prev;
-}
 function use(fn, element, arg) {
   return untrack(() => fn(element, arg));
 }
@@ -1294,10 +1300,6 @@ function insert(parent, accessor, marker, initial) {
 }
 function isHydrating(node) {
   return !!sharedConfig.context && !sharedConfig.done && (!node || node.isConnected);
-}
-function toggleClassKey(node, key, value) {
-  const classNames = key.trim().split(/\s+/);
-  for (let i = 0, nameLen = classNames.length; i < nameLen; i++) node.classList.toggle(classNames[i], value);
 }
 function eventHandler(e) {
   if (sharedConfig.registry && sharedConfig.events) {
@@ -1487,11 +1489,27 @@ var import_calendar = __toESM(require_calendar());
 // src/assets/icons/panel-top-close.svg
 var panel_top_close_default = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-panel-top-close-icon lucide-panel-top-close"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="m9 16 3-3 3 3"/></svg>';
 
+// src/libs/date.ts
+function formatDateToInput(date) {
+  return date.toISOString().split("T")[0];
+}
+function getDayName(date) {
+  const dda = new Date(date);
+  return dda.toLocaleDateString("en-US", { weekday: "long" });
+}
+function prettyDate(date) {
+  return new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  ;
+}
+
 // src/libs/CalendarManager.ts
 var CalendarManager = class _CalendarManager {
   context = null;
   static self;
   calendars = [];
+  midnights = 0;
+  dailyInterval = null;
+  midnightTimeout = null;
   // #1
   static getSelf() {
     if (!this.self) {
@@ -1526,9 +1544,13 @@ var CalendarManager = class _CalendarManager {
   async removeTask(cardName, date, id) {
     const day = this.getCalendar(cardName)?.data?.days.find((i) => i.date === date);
     if (day) {
-      day.tasks = day.tasks.filter((i) => i.id !== id);
+      if (day?.tasks.length === 1) {
+        this.getCalendar(cardName).data.days = this.getCalendar(cardName)?.data.days.filter((i) => i.date !== date);
+      } else {
+        day.tasks = day.tasks.filter((i) => i.id !== id);
+      }
+      await this.update(cardName);
     }
-    await this.update(cardName);
   }
   editTask(cardName, date, task) {
     this.getCalendar(cardName).data?.days.find((i) => i.date === date)?.tasks.map((i) => i.id === task.id ? task : i);
@@ -1541,8 +1563,46 @@ var CalendarManager = class _CalendarManager {
     this.getCalendar(cardName).data.selectedDate = date;
     this.update(cardName);
   }
+  setCalendarData(cardName, data) {
+    const cal = this.getCalendar(cardName);
+    cal.data = { ...cal.data, ...data };
+    this.update(cardName);
+  }
   async update(cardName) {
     await this.context?.db.putData(cardName, this.getCalendar(cardName).data);
+  }
+  // glob
+  onMidnight(callback) {
+    if (this.midnights === 0) {
+      const now = /* @__PURE__ */ new Date();
+      const nextMidnight = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1,
+        0,
+        0,
+        0,
+        0
+      );
+      const notify = () => {
+        this.context?.toolEvent.emit("midnight", formatDateToInput(/* @__PURE__ */ new Date()));
+      };
+      const msUntilMidnight = nextMidnight.getTime() - now.getTime();
+      this.midnightTimeout = setTimeout(() => {
+        notify();
+        this.dailyInterval = setInterval(notify, 24 * 60 * 60 * 1e3);
+      }, msUntilMidnight);
+    }
+    this.midnights += 1;
+    this.context?.toolEvent.on("midnight", callback);
+  }
+  offMidnight(callback) {
+    this.midnights -= 1;
+    this.context?.toolEvent.off("midnight", callback);
+    if (this.midnights === 0) {
+      this.dailyInterval && clearInterval(this.dailyInterval);
+      this.midnightTimeout && clearInterval(this.midnightTimeout);
+    }
   }
 };
 
@@ -1633,23 +1693,10 @@ function Task({
 }
 delegateEvents(["contextmenu"]);
 
-// src/libs/date.ts
-function formatDateToInput(date) {
-  return date.toISOString().split("T")[0];
-}
-function getDayName(date) {
-  const dda = new Date(date);
-  return dda.toLocaleDateString("en-US", { weekday: "long" });
-}
-function prettyDate(date) {
-  return new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-  ;
-}
-
 // src/components/DaySlot.tsx
-var _tmpl$2 = /* @__PURE__ */ template(`<span class="group-hover:opacity-100 opacity-0 text-xs text-secondary-40 absolute duration-300 transition-opacity">`);
-var _tmpl$22 = /* @__PURE__ */ template(`<button class=button-control>`);
-var _tmpl$3 = /* @__PURE__ */ template(`<div><div><div class="flex justify-between items-center"><div class="flex flex-col justify-between items-center relative"><h2>`);
+var _tmpl$2 = /* @__PURE__ */ template(`<div class="flex justify-between items-center"><h2></h2><button class=button-control>`);
+var _tmpl$22 = /* @__PURE__ */ template(`<div><div>`);
+var _tmpl$3 = /* @__PURE__ */ template(`<div class="flex flex-col justify-between items-center relative"><h2></h2><span class="group-hover:opacity-100 opacity-0 text-xs text-secondary-40 absolute duration-300 transition-opacity">`);
 var _tmpl$4 = /* @__PURE__ */ template(`<span>`);
 var _tmpl$5 = /* @__PURE__ */ template(`<div class="w-full flex flex-col gap-1 flex-1 pt-5 overflow-hidden overflow-y-auto">`);
 var _tmpl$6 = /* @__PURE__ */ template(`<input class=color-secondary-50 placeholder="Add a new task...">`);
@@ -1696,65 +1743,55 @@ function DaySlot({
     parentDiv.removeEventListener("click", open);
   });
   return (() => {
-    var _el$ = _tmpl$3(), _el$2 = _el$.firstChild, _el$3 = _el$2.firstChild, _el$4 = _el$3.firstChild, _el$5 = _el$4.firstChild;
+    var _el$ = _tmpl$22(), _el$2 = _el$.firstChild;
     _el$.addEventListener("animationend", on_animation_end);
     var _ref$ = parentDiv;
     typeof _ref$ === "function" ? use(_ref$, _el$) : parentDiv = _el$;
-    insert(_el$5, () => getDayName(date));
-    insert(_el$4, createComponent(Show, {
-      when: !isOpen,
-      get children() {
-        var _el$6 = _tmpl$2();
-        _el$6.style.setProperty("top", "3em");
-        insert(_el$6, () => `${dayData().quickDate} | ${dayData().n_tasks_x}:${dayData().n_tasks}`);
-        return _el$6;
-      }
-    }), null);
-    insert(_el$3, createComponent(Show, {
-      get when() {
-        return isOpen();
-      },
-      get children() {
-        var _el$7 = _tmpl$22();
-        _el$7.$$click = close;
-        _el$7.innerHTML = panel_top_close_default;
-        return _el$7;
-      }
-    }), null);
     insert(_el$2, createComponent(Show, {
       get when() {
         return isOpen();
       },
+      get fallback() {
+        return (() => {
+          var _el$6 = _tmpl$3(), _el$7 = _el$6.firstChild, _el$8 = _el$7.nextSibling;
+          insert(_el$7, () => getDayName(date));
+          _el$8.style.setProperty("top", "3em");
+          insert(_el$8, () => `${dayData().quickDate} | ${dayData().n_tasks_x}:${dayData().n_tasks}`);
+          createRenderEffect(() => className(_el$7, `${import_calendar.default["day-title"]} px-2`));
+          return _el$6;
+        })();
+      },
       get children() {
-        return createComponent(DayPanel, mergeProps(() => ({
+        return [(() => {
+          var _el$3 = _tmpl$2(), _el$4 = _el$3.firstChild, _el$5 = _el$4.nextSibling;
+          insert(_el$4, () => getDayName(date));
+          _el$5.$$click = close;
+          _el$5.innerHTML = panel_top_close_default;
+          createRenderEffect(() => className(_el$4, `${import_calendar.default["day-title"]}`));
+          return _el$3;
+        })(), createComponent(DayPanel, mergeProps(() => ({
           cardName,
           tasks,
           setTasks,
           quickDate: dayData().quickDate,
           date
-        })));
+        })))];
       }
-    }), null);
+    }));
     createRenderEffect((_p$) => {
-      var _v$ = `group ${import_calendar.default["day-slot"]} relative`, _v$2 = !!(openPanel() === id), _v$3 = !!(openPanel() !== null && openPanel() !== id), _v$4 = !!isOpen(), _v$5 = import_calendar.default["day-slot-content"], _v$6 = `${import_calendar.default["day-title"]} peer`, _v$7 = {
-        "px-2 ": !isOpen()
-      };
+      var _v$ = `group ${import_calendar.default["day-slot"]} relative`, _v$2 = !!(openPanel() === id), _v$3 = !!(openPanel() !== null && openPanel() !== id), _v$4 = !!isOpen(), _v$5 = import_calendar.default["day-slot-content"];
       _v$ !== _p$.e && className(_el$, _p$.e = _v$);
       _v$2 !== _p$.t && _el$.classList.toggle("open", _p$.t = _v$2);
       _v$3 !== _p$.a && _el$.classList.toggle("close", _p$.a = _v$3);
       _v$4 !== _p$.o && _el$.classList.toggle("opened", _p$.o = _v$4);
       _v$5 !== _p$.i && className(_el$2, _p$.i = _v$5);
-      _v$6 !== _p$.n && className(_el$5, _p$.n = _v$6);
-      _p$.s = classList(_el$5, _v$7, _p$.s);
       return _p$;
     }, {
       e: void 0,
       t: void 0,
       a: void 0,
       o: void 0,
-      i: void 0,
-      n: void 0,
-      s: void 0
+      i: void 0
     });
     return _el$;
   })();
@@ -1781,13 +1818,13 @@ function DayPanel({
     }
   };
   return [(() => {
-    var _el$8 = _tmpl$4();
-    insert(_el$8, quickDate);
-    createRenderEffect(() => className(_el$8, import_calendar.default["day-date"]));
-    return _el$8;
+    var _el$9 = _tmpl$4();
+    insert(_el$9, quickDate);
+    createRenderEffect(() => className(_el$9, import_calendar.default["day-date"]));
+    return _el$9;
   })(), (() => {
-    var _el$9 = _tmpl$5();
-    insert(_el$9, createComponent(For, {
+    var _el$0 = _tmpl$5();
+    insert(_el$0, createComponent(For, {
       get each() {
         return tasks();
       },
@@ -1798,12 +1835,12 @@ function DayPanel({
         setTasks
       })
     }));
-    return _el$9;
-  })(), (() => {
-    var _el$0 = _tmpl$6();
-    _el$0.$$keydown = submitTask;
-    _el$0.style.setProperty("font-weight", "300");
     return _el$0;
+  })(), (() => {
+    var _el$1 = _tmpl$6();
+    _el$1.$$keydown = submitTask;
+    _el$1.style.setProperty("font-weight", "300");
+    return _el$1;
   })()];
 }
 delegateEvents(["click", "keydown"]);
@@ -1812,12 +1849,13 @@ delegateEvents(["click", "keydown"]);
 var _tmpl$7 = /* @__PURE__ */ template(`<div class="@container h-full relative flex flex-col"><div><input type=date></div><div>`);
 var _tmpl$23 = /* @__PURE__ */ template(`<hr>`);
 function Calendar({
-  cardName
+  cardName,
+  data,
+  setData
 }) {
   const [openPanel, setOpenPanel] = createSignal(null);
-  const [selectedDate, setSelectedDate] = createSignal(CalendarManager.getSelf().getCalendar(cardName).data.selectedDate);
   const week = createMemo(() => {
-    const start = new Date(selectedDate());
+    const start = new Date(data().selectedDate);
     return Array.from({
       length: 7
     }, (_, i) => {
@@ -1829,7 +1867,10 @@ function Calendar({
   const changeSelectedDate = (e) => {
     setOpenPanel(null);
     const sda = e.currentTarget.value;
-    setSelectedDate(sda);
+    setData((prev) => ({
+      ...prev,
+      selectedDate: sda
+    }));
     CalendarManager.getSelf().setSelectedDate(cardName, sda);
   };
   return (() => {
@@ -1878,37 +1919,97 @@ function Calendar({
       t: void 0,
       a: void 0
     });
-    createRenderEffect(() => _el$3.value = selectedDate());
+    createRenderEffect(() => _el$3.value = data().selectedDate);
     return _el$;
   })();
 }
 
 // src/libs/settings.ts
-function showSettings() {
+function showSettings(cardName, data, setData) {
+  const settings = {
+    tool: "Calendar",
+    card: cardName,
+    options: [
+      {
+        type: "text",
+        label: "Name",
+        description: "Name of this calendar.",
+        value: data().name,
+        onChange: (s) => setData((prev) => ({ ...prev, name: s }))
+      },
+      {
+        type: "boolean",
+        label: "Start Today",
+        description: "Update the view to start from today automatically.",
+        value: data().start_today,
+        onChange: (v) => setData((prev) => ({ ...prev, start_today: v }))
+      }
+    ],
+    save: () => {
+      CalendarManager.getSelf().setCalendarData(cardName, data());
+    }
+  };
+  CalendarManager.getSelf().context?.app.emit("tool-settings", settings);
 }
 
 // src/App.tsx
-var _tmpl$8 = /* @__PURE__ */ template(`<div class="w-full h-full">`);
+var import_calendar3 = __toESM(require_calendar());
+var _tmpl$8 = /* @__PURE__ */ template(`<div>`);
+var _tmpl$24 = /* @__PURE__ */ template(`<div><h1 class="font-bold text-xl">`);
 function App({
   cardName
 }) {
   const statics = createMemo(() => ({
     keys: {
-      settings: `myplugin-${cardName}-settings`
+      settings: `calendar-${cardName}-settings`
     }
   }));
+  const [data, setData] = createSignal(CalendarManager.getSelf().getCalendar(cardName).data);
+  const onSettings = () => {
+    showSettings(cardName, data, setData);
+  };
+  const onMidnight = (d) => {
+    setData((prev) => ({
+      ...prev,
+      selectedDate: d ?? prev.selectedDate
+    }));
+  };
+  createEffect(() => {
+    if (data().start_today) {
+      CalendarManager.getSelf().onMidnight(onMidnight);
+    } else {
+      CalendarManager.getSelf().offMidnight(onMidnight);
+    }
+  });
   onMount(() => {
-    CalendarManager.getSelf().context.app.on(statics().keys.settings, showSettings);
+    CalendarManager.getSelf().context.app.on(statics().keys.settings, onSettings);
   });
   onCleanup(() => {
-    CalendarManager.getSelf().context.app.off(statics().keys.settings, showSettings);
+    CalendarManager.getSelf().context.app.off(statics().keys.settings, onSettings);
+    CalendarManager.getSelf().offMidnight(onMidnight);
   });
   return (() => {
     var _el$ = _tmpl$8();
     insert(_el$, createComponent(Calendar, {
-      cardName
-    }));
+      cardName,
+      data,
+      setData
+    }), null);
+    insert(_el$, createComponent(FloatingPanel, {
+      data
+    }), null);
+    createRenderEffect(() => className(_el$, import_calendar3.default["parent"]));
     return _el$;
+  })();
+}
+function FloatingPanel({
+  data
+}) {
+  return (() => {
+    var _el$2 = _tmpl$24(), _el$3 = _el$2.firstChild;
+    insert(_el$3, () => data().name);
+    createRenderEffect(() => className(_el$2, import_calendar3.default["floating-panel"]));
+    return _el$2;
   })();
 }
 
@@ -1949,6 +2050,7 @@ var Main = class {
   async onCreate(cardName) {
     const initialData = {
       name: "Example",
+      start_today: true,
       selectedDate: formatDateToInput(/* @__PURE__ */ new Date()),
       days: calendar
     };

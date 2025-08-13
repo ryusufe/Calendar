@@ -1,11 +1,10 @@
 import Calendar from "@components/Calendar"
 import { CalendarManager } from "@libs/CalendarManager"
-import { DataType } from "@type/DataType"
+import { CalendarOptions } from "@type/CalendarOptions"
 import { StaticsType } from "@type/StaticsType"
-import { DataBase, HollowEvent, ICard } from "hollow-api"
 import { showSettings } from "libs/settings"
-import { createMemo, onCleanup, onMount } from "solid-js"
-
+import { Accessor, createEffect, createMemo, createSignal, onCleanup, onMount } from "solid-js"
+import styles from "@styles/calendar.module.css";
 
 
 type AppProps = {
@@ -15,17 +14,51 @@ type AppProps = {
 export default function App({ cardName }: AppProps) {
 	const statics = createMemo<StaticsType>(() => ({
 		keys: {
-			settings: `myplugin-${cardName}-settings`
+			settings: `calendar-${cardName}-settings`
 		}
 	}))
-	onMount(() => {
-		CalendarManager.getSelf().context!.app.on(statics().keys.settings, showSettings)
-	})
-	onCleanup(() => {
-		CalendarManager.getSelf().context!.app.off(statics().keys.settings, showSettings)
-	})
+	const [data, setData] = createSignal<CalendarOptions>(CalendarManager.getSelf().getCalendar(cardName).data)
 
-	return <div class="w-full h-full">
-		<Calendar cardName={cardName} />
+	const onSettings = () => {
+		showSettings(cardName, data, setData);
+	}
+
+	const onMidnight = (d: string | undefined) => {
+		setData(prev => ({ ...prev, selectedDate: d ?? prev.selectedDate }));
+	}
+	createEffect(() => {
+		if (data().start_today) {
+			CalendarManager.getSelf().onMidnight(onMidnight);
+		}
+		else {
+			CalendarManager.getSelf().offMidnight(onMidnight);
+		}
+	});
+
+	onMount(() => {
+		CalendarManager.getSelf().context!.app.on(statics().keys.settings, onSettings);
+	});
+	onCleanup(() => {
+		CalendarManager.getSelf().context!.app.off(statics().keys.settings, onSettings);
+		CalendarManager.getSelf().offMidnight(onMidnight);
+	});
+
+	return <div class={styles["parent"]}>
+		<Calendar {...{ cardName, data, setData }} />
+		<FloatingPanel data={data} />
+	</div>
+}
+
+
+
+type FloatingPanelProps = {
+	data: Accessor<CalendarOptions>
+}
+function FloatingPanel({ data }: FloatingPanelProps) {
+
+
+
+	return <div class={styles["floating-panel"]}>
+		<h1 class="font-bold text-xl">{data().name}</h1>
 	</div>
 }

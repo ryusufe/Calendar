@@ -72,30 +72,29 @@ export function DaySlot({ cardName, id, date, openPanel, setOpenPanel }: DaySlot
 		onAnimationEnd={on_animation_end}
 	>
 		<div class={styles["day-slot-content"]}>
-			<div class="flex justify-between items-center">
-				<div class="flex flex-col justify-between items-center relative">
+			<Show when={isOpen()} fallback={<div class="flex flex-col justify-between items-center relative">
+				<h2
+					class={`${styles["day-title"]} px-2`}
+				>
+					{getDayName(date)}
+				</h2>
+
+				<span
+					class="group-hover:opacity-100 opacity-0 text-xs text-secondary-40 absolute duration-300 transition-opacity"
+					style={{ top: "3em" }}
+				>
+					{`${dayData().quickDate} | ${dayData().n_tasks_x}:${dayData().n_tasks}`}
+				</span>
+
+			</div>}>
+				<div class="flex justify-between items-center">
 					<h2
-						class={`${styles["day-title"]} peer`}
-						classList={{
-							"px-2 ": !isOpen(),
-						}}
+						class={`${styles["day-title"]}`}
 					>
 						{getDayName(date)}
 					</h2>
-					<Show when={!isOpen}>
-						<span
-							class="group-hover:opacity-100 opacity-0 text-xs text-secondary-40 absolute duration-300 transition-opacity"
-							style={{ top: "3em" }}
-						>
-							{`${dayData().quickDate} | ${dayData().n_tasks_x}:${dayData().n_tasks}`}
-						</span>
-					</Show>
-				</div>
-				<Show when={isOpen()}>
 					<button class="button-control" onclick={close} innerHTML={PanelTopClose} />
-				</Show>
-			</div>
-			<Show when={isOpen()}>
+				</div>
 				<DayPanel {...{ cardName, tasks, setTasks, quickDate: dayData().quickDate, date }} />
 			</Show>
 		</div>

@@ -52,6 +52,7 @@
 .day-slot:global(.close) {
 	height: 0;
 	opacity: 0;
+	pointer-events: none;
 }
 
 
@@ -79,6 +80,14 @@
 
 :global(.dark) .day-title {
 	color: var(--color-neutral-400);
+}
+
+.day-slot.open .day-title {
+	color: var(--color-neutral-950);
+}
+
+:global(.dark) .day-slot.open .day-title {
+	color: var(--color-neutral-50);
 }
 
 .day-date {
@@ -137,13 +146,27 @@
 
 
 
+.parent {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
 
 
+.parent:hover .floating-panel {
+	opacity: 0;
+}
 
-
-
-
-
+.floating-panel {
+	position: absolute;
+	top: 0;
+	opacity: 1;
+	background-color: var(--secondary-color-05);
+	width: 100%;
+	transition: opacity 0.3s ease-in-out;
+	padding: calc(var(--spacing) * 10);
+	pointer-events: none;
+}
 
 
 
