@@ -59,7 +59,6 @@ export function DaySlot({ cardName, id, date, openPanel, setOpenPanel }: DaySlot
 		parentDiv.removeEventListener("click", open)
 	})
 
-	// TODO makes 2 difference titles one before open and one after open in panel
 
 	return <div
 		class={`group ${styles["day-slot"]} relative`}
@@ -93,7 +92,8 @@ export function DaySlot({ cardName, id, date, openPanel, setOpenPanel }: DaySlot
 					>
 						{getDayName(date)}
 					</h2>
-					<button class="button-control" onclick={close} innerHTML={PanelTopClose} />
+					<button class="button-control" onclick={close} innerHTML={PanelTopClose} >
+					</button>
 				</div>
 				<DayPanel {...{ cardName, tasks, setTasks, quickDate: dayData().quickDate, date }} />
 			</Show>

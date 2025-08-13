@@ -126,8 +126,7 @@
 	visibility: visible !important;
 }
 
-
-.cl-sepa {
+.control-section .cl-sepa {
 
 	border: none;
 	width: 100%;
@@ -162,9 +161,10 @@
 	top: 0;
 	opacity: 1;
 	background-color: var(--secondary-color-05);
+	border-radius: 1em;
 	width: 100%;
 	transition: opacity 0.3s ease-in-out;
-	padding: calc(var(--spacing) * 10);
+	padding: calc(var(--spacing) * 5);
 	pointer-events: none;
 }
 

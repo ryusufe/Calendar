@@ -4,5 +4,6 @@
 export type CalendarOptions = {
 	name: string,
 	start_today: boolean,
-	selectedDate: string
+	selectedDate: string,
+	threshold: number
 }

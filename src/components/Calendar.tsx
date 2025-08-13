@@ -10,20 +10,14 @@ type CalendarProps = {
 	cardName: string
 	data: Accessor<CalendarOptions>
 	setData: Setter<CalendarOptions>
+	week: Accessor<string[]>
 }
 
 
-export default function Calendar({ cardName, data, setData }: CalendarProps) {
+export default function Calendar({ cardName, data, setData, week }: CalendarProps) {
 
 	const [openPanel, setOpenPanel] = createSignal<number | null>(null);
-	const week = createMemo(() => {
-		const start = new Date(data().selectedDate);
-		return Array.from({ length: 7 }, (_, i) => {
-			const day = new Date(start);
-			day.setDate(start.getDate() + i);
-			return formatDateToInput(day);
-		});
-	});
+
 	const changeSelectedDate = (e: Event & { currentTarget: HTMLInputElement }) => {
 		setOpenPanel(null);
 		const sda = e.currentTarget.value;

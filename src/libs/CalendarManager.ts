@@ -33,7 +33,7 @@ export class CalendarManager {
 
 	// #2
 	public addCalendar(cal: CalendarType) {
-		this.calendars.push(cal);
+		this.calendars.push({ ...cal, data: { ...cal.data, selectedDate: cal.data.start_today ? formatDateToInput(new Date()) : cal.data.selectedDate } });
 	}
 	public getCalendar(cardName: string): CalendarType {
 		return this.calendars.find(i => i.card == cardName)!;

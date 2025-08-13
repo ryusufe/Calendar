@@ -45,8 +45,9 @@ export default class Main implements IPlugin {
 
 	public async onCreate(cardName: string): Promise<boolean> {
 		const initialData: DataType = {
-			name: "Example",
+			name: cardName,
 			start_today: true,
+			threshold: 4,
 			selectedDate: formatDateToInput(new Date()),
 			days: calendar
 		};
