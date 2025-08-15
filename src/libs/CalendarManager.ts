@@ -1,8 +1,9 @@
 import { CalendarOptions } from "@type/CalendarOptions";
 import { CalendarType } from "@type/CalendarType";
 import { TaskType } from "@type/TaskType";
-import { DataBase, HollowEvent } from "hollow-api";
-import { formatDateToInput } from "./date";
+import { DataBase, EntryData, HollowEvent } from "hollow-api";
+import { formatDateToInput, prettyDate } from "./date";
+import { DayType } from "@type/DayType";
 
 
 type ContextType = {
@@ -33,7 +34,7 @@ export class CalendarManager {
 
 	// #2
 	public addCalendar(cal: CalendarType) {
-		this.calendars.push({ ...cal, data: { ...cal.data, selectedDate: cal.data.start_today ? formatDateToInput(new Date()) : cal.data.selectedDate } });
+		this.calendars.push({ ...cal, data: { ...cal.data, selected_date: cal.data.start_today ? formatDateToInput(new Date()) : cal.data.selected_date } });
 	}
 	public getCalendar(cardName: string): CalendarType {
 		return this.calendars.find(i => i.card == cardName)!;
@@ -50,6 +51,7 @@ export class CalendarManager {
 		} else {
 			day.tasks.push(task);
 		}
+		this.addEntry(cardName, day);
 		this.update(cardName);
 	}
 
@@ -58,9 +60,11 @@ export class CalendarManager {
 		if (day) {
 			if (day?.tasks.length === 1) {
 				this.getCalendar(cardName).data.days = this.getCalendar(cardName)?.data.days.filter(i => i.date !== date);
+				this.removeEntry(cardName, date)
 			}
 			else {
 				day.tasks = day.tasks.filter(i => i.id !== id);
+				this.addEntry(cardName, day);
 			}
 			await this.update(cardName);
 		}
@@ -71,12 +75,21 @@ export class CalendarManager {
 		this.update(cardName);
 	}
 
+	public toggleTask(cardName: string, date: string, id: string, state: boolean) {
+		const day = this.getCalendar(cardName).data?.days.find(i => i.date === date);
+		if (day) {
+			day.tasks = day.tasks.map((i: TaskType) => i.id === id ? { ...i, completed: state } : i);
+			this.update(cardName);
+			this.addEntry(cardName, day);
+		}
+	}
+
 	public getTasks(cardName: string, date: string): TaskType[] {
 		return this.getCalendar(cardName).data.days.find(i => i.date === date)?.tasks ?? [];
 	}
 
 	public setSelectedDate(cardName: string, date: string) {
-		this.getCalendar(cardName).data.selectedDate = date;
+		this.getCalendar(cardName).data.selected_date = date;
 		this.update(cardName);
 	}
 	public setCalendarData(cardName: string, data: CalendarOptions) {
@@ -124,4 +137,54 @@ export class CalendarManager {
 		}
 	}
 
+	private addEntry(cardName: string, day: DayType) {
+		const n_tasks = day.tasks.length;
+		const n_tasks_x = day.tasks.filter(i => i.completed).length;
+		const pDate = prettyDate(day.date);
+		const entry: EntryData = {
+			id: `calendar|${cardName}|${day.date}`,
+			source: {
+				tool: "calendar",
+				card: cardName
+			},
+			title: `Day: ${pDate}`,
+			content: `# Tasks for ${pDate}
+
+---
+
+## ✅ Finished Tasks
+${day.tasks
+					.filter(i => i.completed)
+					.map(i => `- ${i.title}`)
+					.join('\n') || '_No finished tasks_'}
+
+## ❌ Unfinished Tasks
+${day.tasks
+					.filter(i => !i.completed)
+					.map(i => `- ${i.title}`)
+					.join('\n') || '_No unfinished tasks_'}
+`
+			,
+			tags: [],
+			meta: {
+				"ToTal Tasks": n_tasks,
+				"Tasks Finished": n_tasks_x,
+				"Tasks Unfinished": n_tasks - n_tasks_x
+			}
+		}
+		this.context?.app.emit("receive-entry", entry);
+	}
+
+	private removeEntry(cardName: string, date: string) {
+		this.context?.app.emit("remove-entry", `calendar|${cardName}|${date}`);
+	}
+
+	public onAppRemoveEntry(cardName: string, date: string) {
+		const dt = this.getCalendar(cardName).data
+		dt.days = dt.days.filter(i => i.date !== date);
+		this.update(cardName);
+	}
+
+
 }
+

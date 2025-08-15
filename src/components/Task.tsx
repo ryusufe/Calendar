@@ -37,6 +37,10 @@ export default function Task({ cardName, date, task, setTasks }: TaskProps) {
 		}
 		CalendarManager.getSelf().context?.app.emit("context-menu-extend", cm)
 	}
+	const toggleState = (e: Event & { currentTarget: HTMLInputElement }) => {
+		setMyTask(prev => ({ ...prev, completed: e.currentTarget.checked }))
+		CalendarManager.getSelf().toggleTask(cardName, date, task.id, e.currentTarget.checked);
+	}
 
 	const editTask = () => {
 		openForm(myTask(), setMyTask);
@@ -49,7 +53,7 @@ export default function Task({ cardName, date, task, setTasks }: TaskProps) {
 	}
 
 	return <div class={styles["checkbox-wrapper-4"]} oncontextmenu={onContextMenu}>
-		<input class={styles["inp-cbx"]} id={myTask().id} checked={myTask().completed} type="checkbox" />
+		<input class={styles["inp-cbx"]} id={myTask().id} onchange={toggleState} checked={myTask().completed} type="checkbox" />
 		<label class={styles["cbx"]} for={myTask().id}>
 			<span>
 				<svg width="12px" height="10px" innerHTML={'<use xlink:href="#check-4"></use>'}>

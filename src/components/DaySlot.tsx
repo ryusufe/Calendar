@@ -9,7 +9,7 @@ import { TaskType } from "@type/TaskType";
 
 type DaySlotProps = {
 	cardName: string,
-	id: number,
+	id: Accessor<number>,
 	date: string,
 	openPanel: Accessor<number | null>,
 	setOpenPanel: Setter<number | null>
@@ -63,8 +63,8 @@ export function DaySlot({ cardName, id, date, openPanel, setOpenPanel }: DaySlot
 	return <div
 		class={`group ${styles["day-slot"]} relative`}
 		classList={{
-			"open": openPanel() === id,
-			"close": openPanel() !== null && openPanel() !== id,
+			"open": openPanel() === id(),
+			"close": openPanel() !== null && openPanel() !== id(),
 			"opened": isOpen()
 		}}
 		ref={parentDiv}

@@ -11,26 +11,6 @@ const calendar: DayType[] = [
 	{
 		date: formatDateToInput(new Date()),
 		tasks: [
-			{
-				id: "task-001",
-				title: "Write documentation for Hollow API",
-				completed: false
-			},
-			{
-				id: "task-002",
-				title: "Fix calendar date rendering bug",
-				completed: true
-			},
-			{
-				id: "task-003",
-				title: "Design new plugin manager UI",
-				completed: false
-			},
-			{
-				id: "task-004",
-				title: "Implement dark/light theme toggle",
-				completed: true
-			}
 		]
 	}
 ]
@@ -48,7 +28,7 @@ export default class Main implements IPlugin {
 			name: cardName,
 			start_today: true,
 			threshold: 4,
-			selectedDate: formatDateToInput(new Date()),
+			selected_date: formatDateToInput(new Date()),
 			days: calendar
 		};
 		const request = await this.db.putData(cardName, initialData);

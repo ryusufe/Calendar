@@ -43,12 +43,24 @@ var require_calendar = __commonJS({
       if (!document.getElementById("a61d331f9582408733f70e912bb1c0aa96c345757d2ec1897ae771fc6d28084d")) {
         var e = document.createElement("style");
         e.id = "a61d331f9582408733f70e912bb1c0aa96c345757d2ec1897ae771fc6d28084d";
-        e.textContent = `.calendar-control-bar_1d26126484073c0c36f38a4b595c3f1e_1 {
+        e.textContent = `.calendar-control-bar_d5b067cffa81e45ba71ea95852dde02a_1 {
 	/* margin-bottom: calc(var(--spacing) * 2); */
+	display: flex;
+	justify-content: space-between;
+	font-family: "Helvetica", arial, sans-serif;
+	font-size: 1em;
+	padding: 0.4em;
+	border-radius: 0.3em;
+	background: var(--color-secondary-05);
+	color: var(--color-secondary-30);
 }
 
+/* .calendar-control-bar:global(.expanded) { */
+/* 	border-radius: 0.3em 0.3em 0 0; */
+/* } */
 
-.calendar-days-container_1d26126484073c0c36f38a4b595c3f1e_6 {
+
+.calendar-days-container_d5b067cffa81e45ba71ea95852dde02a_18 {
 	position: relative;
 	/* overflow: hidden; */
 	width: 100%;
@@ -61,7 +73,7 @@ var require_calendar = __commonJS({
 }
 
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19 {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31 {
 	position: relative;
 	height: calc(100% / 7);
 	min-height: 0%;
@@ -76,25 +88,25 @@ var require_calendar = __commonJS({
 	animation: none;
 }
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19:not(.open):hover .day-title_1d26126484073c0c36f38a4b595c3f1e_34 {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31:not(.open):hover .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
 	color: var(--color-secondary-95);
 }
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19.open {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.open {
 	height: 100%;
 	cursor: default;
 	border-width: 0;
-	animation: grto_1d26126484073c0c36f38a4b595c3f1e_1 0.6s linear;
+	animation: grto_d5b067cffa81e45ba71ea95852dde02a_1 0.6s linear;
 }
 
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19.opened {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.opened {
 	justify-content: start;
 	align-items: start;
 	padding: 1em 0 0 0;
 }
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19.close {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.close {
 	height: 0;
 	opacity: 0;
 	pointer-events: none;
@@ -102,13 +114,13 @@ var require_calendar = __commonJS({
 
 
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19.opened .day-slot-content_1d26126484073c0c36f38a4b595c3f1e_60 {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.opened .day-slot-content_d5b067cffa81e45ba71ea95852dde02a_72 {
 	width: 100%;
 	height: 100%;
-	animation: open-up_1d26126484073c0c36f38a4b595c3f1e_1 0.3s linear;
+	animation: open-up_d5b067cffa81e45ba71ea95852dde02a_1 0.3s linear;
 }
 
-.day-slot-content_1d26126484073c0c36f38a4b595c3f1e_60 {
+.day-slot-content_d5b067cffa81e45ba71ea95852dde02a_72 {
 	/* margin: auto; */
 	width: fit-content;
 	height: fit-content;
@@ -116,38 +128,38 @@ var require_calendar = __commonJS({
 	flex-direction: column;
 }
 
-.day-title_1d26126484073c0c36f38a4b595c3f1e_34 {
+.day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 2em;
 	color: var(--color-neutral-600);
 }
 
-.dark .day-title_1d26126484073c0c36f38a4b595c3f1e_34 {
+.dark .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
 	color: var(--color-neutral-400);
 }
 
-.day-slot_1d26126484073c0c36f38a4b595c3f1e_19.open_1d26126484073c0c36f38a4b595c3f1e_34 .day-title_1d26126484073c0c36f38a4b595c3f1e_34 {
+.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.open_d5b067cffa81e45ba71ea95852dde02a_46 .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
 	color: var(--color-neutral-950);
 }
 
-.dark .day-slot_1d26126484073c0c36f38a4b595c3f1e_19.open_1d26126484073c0c36f38a4b595c3f1e_34 .day-title_1d26126484073c0c36f38a4b595c3f1e_34 {
+.dark .day-slot_d5b067cffa81e45ba71ea95852dde02a_31.open_d5b067cffa81e45ba71ea95852dde02a_46 .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
 	color: var(--color-neutral-50);
 }
 
-.day-date_1d26126484073c0c36f38a4b595c3f1e_93 {
+.day-date_d5b067cffa81e45ba71ea95852dde02a_105 {
 	color: var(--color-secondary-30);
 }
 
 
 
-.task-checkbox_1d26126484073c0c36f38a4b595c3f1e_99 {}
+.task-checkbox_d5b067cffa81e45ba71ea95852dde02a_111 {}
 
-.task-content_1d26126484073c0c36f38a4b595c3f1e_101 {
+.task-content_d5b067cffa81e45ba71ea95852dde02a_113 {
 	text-decoration-color: var(--color-primary);
 }
 
-.task-content_1d26126484073c0c36f38a4b595c3f1e_101.checked {
+.task-content_d5b067cffa81e45ba71ea95852dde02a_113.checked {
 	text-decoration: line-through;
 }
 
@@ -156,23 +168,19 @@ var require_calendar = __commonJS({
 
 
 
-.date-picker_1d26126484073c0c36f38a4b595c3f1e_114 {
+.date-picker_d5b067cffa81e45ba71ea95852dde02a_126 {
 	appearance: none;
 	-webkit-appearance: none;
-	color: var(--color-secondary-30);
-	font-family: "Helvetica", arial, sans-serif;
-	font-size: 1em;
-	font-family: monospace;
-	background: var(--color-secondary-05);
-	/* background: color-mix(in oklab, var(--color-secondary-20), transparent 90%); */
-	padding: 0.2em;
-	border-radius: 0.3em;
 	display: inline-block !important;
 	visibility: visible !important;
+	cursor: pointer;
 }
 
+.control-section_d5b067cffa81e45ba71ea95852dde02a_134:hover {
+	background: var(--color-secondary-10);
+}
 
-.cl-sepa_1d26126484073c0c36f38a4b595c3f1e_130 {
+.cl-sepa_d5b067cffa81e45ba71ea95852dde02a_138 {
 
 	border: none;
 	width: 100%;
@@ -182,6 +190,15 @@ var require_calendar = __commonJS({
 }
 
 
+.info-button_d5b067cffa81e45ba71ea95852dde02a_148 svg {
+	width: 1.2em;
+	height: 1.2em;
+	color: var(--secondary-color-50);
+}
+
+.info-button_d5b067cffa81e45ba71ea95852dde02a_148:hover svg {
+	color: var(--secondary-color-95);
+}
 
 
 
@@ -190,28 +207,24 @@ var require_calendar = __commonJS({
 
 
 
-
-.parent_1d26126484073c0c36f38a4b595c3f1e_149 {
+.parent_d5b067cffa81e45ba71ea95852dde02a_165 {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
 
-.parent_1d26126484073c0c36f38a4b595c3f1e_149:hover .floating-panel_1d26126484073c0c36f38a4b595c3f1e_156 {
-	opacity: 0;
-}
-
-.floating-panel_1d26126484073c0c36f38a4b595c3f1e_156 {
+.floating-panel_d5b067cffa81e45ba71ea95852dde02a_172 {
 	position: absolute;
-	top: 0;
+	top: 150%;
 	opacity: 1;
 	background-color: var(--secondary-color-05);
-	border-radius: 1em;
+	border-radius: 0.3em;
 	width: 100%;
 	transition: opacity 0.3s ease-in-out;
+	z-index: 10;
 	padding: calc(var(--spacing) * 5);
-	pointer-events: none;
+	animation: open-up_d5b067cffa81e45ba71ea95852dde02a_1 0.3s forwards;
 }
 
 
@@ -229,7 +242,7 @@ var require_calendar = __commonJS({
 
 
 
-@keyframes grto_1d26126484073c0c36f38a4b595c3f1e_1 {
+@keyframes grto_d5b067cffa81e45ba71ea95852dde02a_1 {
 
 	0% {
 		opacity: 1;
@@ -246,7 +259,7 @@ var require_calendar = __commonJS({
 
 }
 
-@keyframes open-up_1d26126484073c0c36f38a4b595c3f1e_1 {
+@keyframes open-up_d5b067cffa81e45ba71ea95852dde02a_1 {
 
 	from {
 		opacity: 0;
@@ -261,7 +274,7 @@ var require_calendar = __commonJS({
         document.head.appendChild(e);
       }
     })();
-    module2.exports = JSON.parse('{"calendar-control-bar":"calendar-control-bar_1d26126484073c0c36f38a4b595c3f1e_1","calendar-days-container":"calendar-days-container_1d26126484073c0c36f38a4b595c3f1e_6","day-slot":"day-slot_1d26126484073c0c36f38a4b595c3f1e_19","day-title":"day-title_1d26126484073c0c36f38a4b595c3f1e_34","grto":"grto_1d26126484073c0c36f38a4b595c3f1e_1","day-slot-content":"day-slot-content_1d26126484073c0c36f38a4b595c3f1e_60","open-up":"open-up_1d26126484073c0c36f38a4b595c3f1e_1","open":"open_1d26126484073c0c36f38a4b595c3f1e_34","day-date":"day-date_1d26126484073c0c36f38a4b595c3f1e_93","task-checkbox":"task-checkbox_1d26126484073c0c36f38a4b595c3f1e_99","task-content":"task-content_1d26126484073c0c36f38a4b595c3f1e_101","date-picker":"date-picker_1d26126484073c0c36f38a4b595c3f1e_114","cl-sepa":"cl-sepa_1d26126484073c0c36f38a4b595c3f1e_130","parent":"parent_1d26126484073c0c36f38a4b595c3f1e_149","floating-panel":"floating-panel_1d26126484073c0c36f38a4b595c3f1e_156"}');
+    module2.exports = JSON.parse('{"calendar-control-bar":"calendar-control-bar_d5b067cffa81e45ba71ea95852dde02a_1","calendar-days-container":"calendar-days-container_d5b067cffa81e45ba71ea95852dde02a_18","day-slot":"day-slot_d5b067cffa81e45ba71ea95852dde02a_31","day-title":"day-title_d5b067cffa81e45ba71ea95852dde02a_46","grto":"grto_d5b067cffa81e45ba71ea95852dde02a_1","day-slot-content":"day-slot-content_d5b067cffa81e45ba71ea95852dde02a_72","open-up":"open-up_d5b067cffa81e45ba71ea95852dde02a_1","open":"open_d5b067cffa81e45ba71ea95852dde02a_46","day-date":"day-date_d5b067cffa81e45ba71ea95852dde02a_105","task-checkbox":"task-checkbox_d5b067cffa81e45ba71ea95852dde02a_111","task-content":"task-content_d5b067cffa81e45ba71ea95852dde02a_113","date-picker":"date-picker_d5b067cffa81e45ba71ea95852dde02a_126","control-section":"control-section_d5b067cffa81e45ba71ea95852dde02a_134","cl-sepa":"cl-sepa_d5b067cffa81e45ba71ea95852dde02a_138","info-button":"info-button_d5b067cffa81e45ba71ea95852dde02a_148","parent":"parent_d5b067cffa81e45ba71ea95852dde02a_165","floating-panel":"floating-panel_d5b067cffa81e45ba71ea95852dde02a_172"}');
   }
 });
 
@@ -1525,7 +1538,7 @@ var CalendarManager = class _CalendarManager {
   }
   // #2
   addCalendar(cal) {
-    this.calendars.push({ ...cal, data: { ...cal.data, selectedDate: cal.data.start_today ? formatDateToInput(/* @__PURE__ */ new Date()) : cal.data.selectedDate } });
+    this.calendars.push({ ...cal, data: { ...cal.data, selected_date: cal.data.start_today ? formatDateToInput(/* @__PURE__ */ new Date()) : cal.data.selected_date } });
   }
   getCalendar(cardName) {
     return this.calendars.find((i) => i.card == cardName);
@@ -1540,6 +1553,7 @@ var CalendarManager = class _CalendarManager {
     } else {
       day.tasks.push(task);
     }
+    this.addEntry(cardName, day);
     this.update(cardName);
   }
   async removeTask(cardName, date, id) {
@@ -1547,8 +1561,10 @@ var CalendarManager = class _CalendarManager {
     if (day) {
       if (day?.tasks.length === 1) {
         this.getCalendar(cardName).data.days = this.getCalendar(cardName)?.data.days.filter((i) => i.date !== date);
+        this.removeEntry(cardName, date);
       } else {
         day.tasks = day.tasks.filter((i) => i.id !== id);
+        this.addEntry(cardName, day);
       }
       await this.update(cardName);
     }
@@ -1557,11 +1573,19 @@ var CalendarManager = class _CalendarManager {
     this.getCalendar(cardName).data?.days.find((i) => i.date === date)?.tasks.map((i) => i.id === task.id ? task : i);
     this.update(cardName);
   }
+  toggleTask(cardName, date, id, state) {
+    const day = this.getCalendar(cardName).data?.days.find((i) => i.date === date);
+    if (day) {
+      day.tasks = day.tasks.map((i) => i.id === id ? { ...i, completed: state } : i);
+      this.update(cardName);
+      this.addEntry(cardName, day);
+    }
+  }
   getTasks(cardName, date) {
     return this.getCalendar(cardName).data.days.find((i) => i.date === date)?.tasks ?? [];
   }
   setSelectedDate(cardName, date) {
-    this.getCalendar(cardName).data.selectedDate = date;
+    this.getCalendar(cardName).data.selected_date = date;
     this.update(cardName);
   }
   setCalendarData(cardName, data) {
@@ -1604,6 +1628,44 @@ var CalendarManager = class _CalendarManager {
       this.dailyInterval && clearInterval(this.dailyInterval);
       this.midnightTimeout && clearInterval(this.midnightTimeout);
     }
+  }
+  addEntry(cardName, day) {
+    const n_tasks = day.tasks.length;
+    const n_tasks_x = day.tasks.filter((i) => i.completed).length;
+    const pDate = prettyDate(day.date);
+    const entry = {
+      id: `calendar|${cardName}|${day.date}`,
+      source: {
+        tool: "calendar",
+        card: cardName
+      },
+      title: `Day: ${pDate}`,
+      content: `# Tasks for ${pDate}
+
+---
+
+## \u2705 Finished Tasks
+${day.tasks.filter((i) => i.completed).map((i) => `- ${i.title}`).join("\n") || "_No finished tasks_"}
+
+## \u274C Unfinished Tasks
+${day.tasks.filter((i) => !i.completed).map((i) => `- ${i.title}`).join("\n") || "_No unfinished tasks_"}
+`,
+      tags: [],
+      meta: {
+        "ToTal Tasks": n_tasks,
+        "Tasks Finished": n_tasks_x,
+        "Tasks Unfinished": n_tasks - n_tasks_x
+      }
+    };
+    this.context?.app.emit("receive-entry", entry);
+  }
+  removeEntry(cardName, date) {
+    this.context?.app.emit("remove-entry", `calendar|${cardName}|${date}`);
+  }
+  onAppRemoveEntry(cardName, date) {
+    const dt = this.getCalendar(cardName).data;
+    dt.days = dt.days.filter((i) => i.date !== date);
+    this.update(cardName);
   }
 };
 
@@ -1656,6 +1718,13 @@ function Task({
     };
     CalendarManager.getSelf().context?.app.emit("context-menu-extend", cm);
   };
+  const toggleState = (e) => {
+    setMyTask((prev) => ({
+      ...prev,
+      completed: e.currentTarget.checked
+    }));
+    CalendarManager.getSelf().toggleTask(cardName, date, task.id, e.currentTarget.checked);
+  };
   const editTask = () => {
     openForm(myTask(), setMyTask);
     CalendarManager.getSelf().editTask(cardName, date, myTask());
@@ -1667,6 +1736,7 @@ function Task({
   return (() => {
     var _el$ = _tmpl$(), _el$2 = _el$.firstChild, _el$3 = _el$2.nextSibling, _el$4 = _el$3.firstChild, _el$5 = _el$4.firstChild, _el$6 = _el$4.nextSibling, _el$7 = _el$3.nextSibling;
     _el$.$$contextmenu = onContextMenu;
+    _el$2.addEventListener("change", toggleState);
     _el$5.innerHTML = '<use xlink:href="#check-4"></use>';
     insert(_el$6, () => myTask().title);
     createRenderEffect((_p$) => {
@@ -1780,7 +1850,7 @@ function DaySlot({
       }
     }));
     createRenderEffect((_p$) => {
-      var _v$ = `group ${import_calendar.default["day-slot"]} relative`, _v$2 = !!(openPanel() === id), _v$3 = !!(openPanel() !== null && openPanel() !== id), _v$4 = !!isOpen(), _v$5 = import_calendar.default["day-slot-content"];
+      var _v$ = `group ${import_calendar.default["day-slot"]} relative`, _v$2 = !!(openPanel() === id()), _v$3 = !!(openPanel() !== null && openPanel() !== id()), _v$4 = !!isOpen(), _v$5 = import_calendar.default["day-slot-content"];
       _v$ !== _p$.e && className(_el$, _p$.e = _v$);
       _v$2 !== _p$.t && _el$.classList.toggle("open", _p$.t = _v$2);
       _v$3 !== _p$.a && _el$.classList.toggle("close", _p$.a = _v$3);
@@ -1846,36 +1916,67 @@ function DayPanel({
 }
 delegateEvents(["click", "keydown"]);
 
+// src/assets/icons/calendar.svg
+var calendar_default = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-range-icon lucide-calendar-range"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M17 14h-6"/><path d="M13 18H7"/><path d="M7 14h.01"/><path d="M17 18h.01"/></svg>\n';
+
+// src/assets/icons/circle-check-big.svg
+var circle_check_big_default = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>\n';
+
 // src/components/Calendar.tsx
-var _tmpl$7 = /* @__PURE__ */ template(`<div class="@container h-full relative flex flex-col"><div><input type=date></div><div>`);
+var _tmpl$7 = /* @__PURE__ */ template(`<div class="@container h-full relative flex flex-col"><div class=relative><div><input type=date><button></button></div></div><div>`);
 var _tmpl$23 = /* @__PURE__ */ template(`<hr>`);
+var _tmpl$32 = /* @__PURE__ */ template(`<div><div class="flex gap-2 items-center"><div></div><h1 class="font-bold text-xl"></h1></div><div class="text-sm font-medium mt-4 mb-2 flex items-center gap-1"><div></div><h2 class=text-secondary-70>Daily Tasks</h2></div><div class="flex gap-1">`);
+var _tmpl$42 = /* @__PURE__ */ template(`<div class="flex flex-col text-xs items-center"><h4></h4><p class="px-2 py-1 bg-secondary-10 rounded">`);
 function Calendar({
   cardName,
   data,
-  setData,
-  week
+  setData
 }) {
   const [openPanel, setOpenPanel] = createSignal(null);
+  const [isInfo, setInfo] = createSignal(false);
+  const week = createMemo(() => {
+    const start = new Date(data().selected_date);
+    return Array.from({
+      length: 7
+    }, (_, i) => {
+      const day = new Date(start);
+      day.setDate(start.getDate() + i);
+      return formatDateToInput(day);
+    });
+  });
   const changeSelectedDate = (e) => {
     setOpenPanel(null);
+    setInfo(false);
     const sda = e.currentTarget.value;
     setData((prev) => ({
       ...prev,
-      selectedDate: sda
+      selected_date: sda
     }));
     CalendarManager.getSelf().setSelectedDate(cardName, sda);
   };
   return (() => {
-    var _el$ = _tmpl$7(), _el$2 = _el$.firstChild, _el$3 = _el$2.firstChild, _el$4 = _el$2.nextSibling;
-    _el$3.addEventListener("change", changeSelectedDate);
-    insert(_el$4, createComponent(For, {
+    var _el$ = _tmpl$7(), _el$2 = _el$.firstChild, _el$3 = _el$2.firstChild, _el$4 = _el$3.firstChild, _el$5 = _el$4.nextSibling, _el$6 = _el$2.nextSibling;
+    _el$4.addEventListener("change", changeSelectedDate);
+    _el$5.$$click = () => setInfo((prev) => !prev);
+    _el$5.innerHTML = calendar_default;
+    insert(_el$2, createComponent(Show, {
+      get when() {
+        return isInfo();
+      },
+      get children() {
+        return createComponent(FloatingPanel, {
+          cardName,
+          data,
+          week
+        });
+      }
+    }), null);
+    insert(_el$6, createComponent(For, {
       get each() {
         return week();
       },
       children: (i, index) => [createComponent(DaySlot, mergeProps({
-        get id() {
-          return index();
-        },
+        id: index,
         date: i
       }, {
         cardName,
@@ -1886,35 +1987,82 @@ function Calendar({
           return memo(() => index() < 6)() && openPanel() === null;
         },
         get children() {
-          var _el$5 = _tmpl$23();
+          var _el$7 = _tmpl$23();
           createRenderEffect((_p$) => {
-            var _v$4 = import_calendar2.default["cl-sepa"], _v$5 = index();
-            _v$4 !== _p$.e && className(_el$5, _p$.e = _v$4);
-            _v$5 !== _p$.t && setAttribute(_el$5, "data-of", _p$.t = _v$5);
+            var _v$5 = import_calendar2.default["cl-sepa"], _v$6 = index();
+            _v$5 !== _p$.e && className(_el$7, _p$.e = _v$5);
+            _v$6 !== _p$.t && setAttribute(_el$7, "data-of", _p$.t = _v$6);
             return _p$;
           }, {
             e: void 0,
             t: void 0
           });
-          return _el$5;
+          return _el$7;
         }
       })]
     }));
     createRenderEffect((_p$) => {
-      var _v$ = import_calendar2.default["calendar-control-bar"], _v$2 = import_calendar2.default["date-picker"], _v$3 = import_calendar2.default["calendar-days-container"];
-      _v$ !== _p$.e && className(_el$2, _p$.e = _v$);
-      _v$2 !== _p$.t && className(_el$3, _p$.t = _v$2);
-      _v$3 !== _p$.a && className(_el$4, _p$.a = _v$3);
+      var _v$ = import_calendar2.default["calendar-control-bar"], _v$2 = import_calendar2.default["date-picker"], _v$3 = import_calendar2.default["info-button"], _v$4 = import_calendar2.default["calendar-days-container"];
+      _v$ !== _p$.e && className(_el$3, _p$.e = _v$);
+      _v$2 !== _p$.t && className(_el$4, _p$.t = _v$2);
+      _v$3 !== _p$.a && className(_el$5, _p$.a = _v$3);
+      _v$4 !== _p$.o && className(_el$6, _p$.o = _v$4);
       return _p$;
     }, {
       e: void 0,
       t: void 0,
-      a: void 0
+      a: void 0,
+      o: void 0
     });
-    createRenderEffect(() => _el$3.value = data().selectedDate);
+    createRenderEffect(() => _el$4.value = data().selected_date);
     return _el$;
   })();
 }
+function FloatingPanel({
+  cardName,
+  data,
+  week
+}) {
+  const days = createMemo(() => CalendarManager.getSelf().getCalendar(cardName).data.days);
+  return (() => {
+    var _el$8 = _tmpl$32(), _el$9 = _el$8.firstChild, _el$0 = _el$9.firstChild, _el$1 = _el$0.nextSibling, _el$10 = _el$9.nextSibling, _el$11 = _el$10.firstChild, _el$12 = _el$10.nextSibling;
+    _el$0.style.setProperty("width", "1.2em");
+    _el$0.style.setProperty("height", "1.2em");
+    _el$0.innerHTML = calendar_default;
+    insert(_el$1, () => data().name);
+    _el$11.style.setProperty("width", "1.1em");
+    _el$11.style.setProperty("height", "1.1em");
+    _el$11.innerHTML = circle_check_big_default;
+    insert(_el$12, createComponent(For, {
+      get each() {
+        return week();
+      },
+      children: (day) => {
+        const numberOfTasks = days().find((i) => i.date === day)?.tasks.length ?? 0;
+        return (() => {
+          var _el$13 = _tmpl$42(), _el$14 = _el$13.firstChild, _el$15 = _el$14.nextSibling;
+          insert(_el$14, () => getDayName(day, "short"));
+          _el$15.style.setProperty("width", "2em");
+          _el$15.style.setProperty("height", "2em");
+          insert(_el$15, numberOfTasks);
+          createRenderEffect((_p$) => {
+            var _v$7 = numberOfTasks < Math.floor(data().threshold / 2) ? "var(--secondary-color-10)" : numberOfTasks >= data().threshold ? "#eb4034" : "#F6E05E", _v$8 = numberOfTasks >= Math.floor(data().threshold / 2) && numberOfTasks < data().threshold ? "black" : "text-secondary-95";
+            _v$7 !== _p$.e && ((_p$.e = _v$7) != null ? _el$15.style.setProperty("background", _v$7) : _el$15.style.removeProperty("background"));
+            _v$8 !== _p$.t && ((_p$.t = _v$8) != null ? _el$15.style.setProperty("color", _v$8) : _el$15.style.removeProperty("color"));
+            return _p$;
+          }, {
+            e: void 0,
+            t: void 0
+          });
+          return _el$13;
+        })();
+      }
+    }));
+    createRenderEffect(() => className(_el$8, import_calendar2.default["floating-panel"]));
+    return _el$8;
+  })();
+}
+delegateEvents(["click"]);
 
 // src/libs/settings.ts
 function showSettings(cardName, data, setData, onSTChanged) {
@@ -1955,18 +2103,8 @@ function showSettings(cardName, data, setData, onSTChanged) {
 }
 
 // src/App.tsx
-var import_calendar3 = __toESM(require_calendar());
-
-// src/assets/icons/calendar.svg
-var calendar_default = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-range-icon lucide-calendar-range"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M17 14h-6"/><path d="M13 18H7"/><path d="M7 14h.01"/><path d="M17 18h.01"/></svg>\n';
-
-// src/assets/icons/circle-check-big.svg
-var circle_check_big_default = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>\n';
-
-// src/App.tsx
+var import_calendar4 = __toESM(require_calendar());
 var _tmpl$8 = /* @__PURE__ */ template(`<div>`);
-var _tmpl$24 = /* @__PURE__ */ template(`<div><div class="flex gap-2 items-center"><div></div><h1 class="font-bold text-xl"></h1></div><div class="text-sm font-medium mt-4 mb-2 flex items-center gap-1"><div></div><h2 class=text-secondary-70>Daily Tasks</h2></div><div class="flex gap-1">`);
-var _tmpl$32 = /* @__PURE__ */ template(`<div class="flex flex-col text-xs items-center"><h4></h4><p class="px-2 py-1 bg-secondary-10 rounded">`);
 function App({
   cardName
 }) {
@@ -1976,23 +2114,13 @@ function App({
     }
   }));
   const [data, setData] = createSignal(CalendarManager.getSelf().getCalendar(cardName).data);
-  const week = createMemo(() => {
-    const start = new Date(data().selectedDate);
-    return Array.from({
-      length: 7
-    }, (_, i) => {
-      const day = new Date(start);
-      day.setDate(start.getDate() + i);
-      return formatDateToInput(day);
-    });
-  });
   const onSettings = () => {
     showSettings(cardName, data, setData, onStartTodayChanged);
   };
   const onMidnight = (d) => {
     setData((prev) => ({
       ...prev,
-      selectedDate: d ?? prev.selectedDate
+      selectedDate: d ?? prev.selected_date
     }));
   };
   const onStartTodayChanged = () => {
@@ -2002,12 +2130,20 @@ function App({
       CalendarManager.getSelf().offMidnight(onMidnight);
     }
   };
+  const removeDay = (id) => {
+    const prts = id?.split("|");
+    if (prts) {
+      CalendarManager.getSelf().onAppRemoveEntry(prts[1], prts[2]);
+    }
+  };
   onMount(() => {
     CalendarManager.getSelf().context.app.on(statics().keys.settings, onSettings);
     onStartTodayChanged();
+    CalendarManager.getSelf().context.toolEvent.on(`${cardName}-remove-entry`, removeDay);
   });
   onCleanup(() => {
     CalendarManager.getSelf().context.app.off(statics().keys.settings, onSettings);
+    CalendarManager.getSelf().context.toolEvent.off(`${cardName}-remove-entry`, removeDay);
     CalendarManager.getSelf().offMidnight(onMidnight);
   });
   return (() => {
@@ -2015,52 +2151,10 @@ function App({
     insert(_el$, createComponent(Calendar, {
       cardName,
       data,
-      setData,
-      week
-    }), null);
-    insert(_el$, createComponent(FloatingPanel, {
-      cardName,
-      data,
-      week
-    }), null);
-    createRenderEffect(() => className(_el$, import_calendar3.default["parent"]));
-    return _el$;
-  })();
-}
-function FloatingPanel({
-  cardName,
-  data,
-  week
-}) {
-  const [days, setDays] = createSignal(CalendarManager.getSelf().getCalendar(cardName).data.days);
-  return (() => {
-    var _el$2 = _tmpl$24(), _el$3 = _el$2.firstChild, _el$4 = _el$3.firstChild, _el$5 = _el$4.nextSibling, _el$6 = _el$3.nextSibling, _el$7 = _el$6.firstChild, _el$8 = _el$6.nextSibling;
-    _el$4.style.setProperty("width", "1.2em");
-    _el$4.style.setProperty("height", "1.2em");
-    _el$4.innerHTML = calendar_default;
-    insert(_el$5, () => data().name);
-    _el$7.style.setProperty("width", "1.1em");
-    _el$7.style.setProperty("height", "1.1em");
-    _el$7.innerHTML = circle_check_big_default;
-    insert(_el$8, createComponent(For, {
-      get each() {
-        return week();
-      },
-      children: (day) => {
-        const numberOfTasks = days().find((i) => i.date === day)?.tasks.length ?? 0;
-        return (() => {
-          var _el$9 = _tmpl$32(), _el$0 = _el$9.firstChild, _el$1 = _el$0.nextSibling;
-          insert(_el$0, () => getDayName(day, "short"));
-          _el$1.style.setProperty("width", "2em");
-          _el$1.style.setProperty("height", "2em");
-          insert(_el$1, numberOfTasks);
-          createRenderEffect((_$p) => (_$p = numberOfTasks < Math.floor(data().threshold / 2) ? "var(--secondary-color-10)" : numberOfTasks >= data().threshold ? "#a8323a" : "#F6E05E") != null ? _el$1.style.setProperty("background", _$p) : _el$1.style.removeProperty("background"));
-          return _el$9;
-        })();
-      }
+      setData
     }));
-    createRenderEffect(() => className(_el$2, import_calendar3.default["floating-panel"]));
-    return _el$2;
+    createRenderEffect(() => className(_el$, import_calendar4.default["parent"]));
+    return _el$;
   })();
 }
 
@@ -2068,28 +2162,7 @@ function FloatingPanel({
 var calendar = [
   {
     date: formatDateToInput(/* @__PURE__ */ new Date()),
-    tasks: [
-      {
-        id: "task-001",
-        title: "Write documentation for Hollow API",
-        completed: false
-      },
-      {
-        id: "task-002",
-        title: "Fix calendar date rendering bug",
-        completed: true
-      },
-      {
-        id: "task-003",
-        title: "Design new plugin manager UI",
-        completed: false
-      },
-      {
-        id: "task-004",
-        title: "Implement dark/light theme toggle",
-        completed: true
-      }
-    ]
+    tasks: []
   }
 ];
 var Main = class {
@@ -2103,7 +2176,7 @@ var Main = class {
       name: cardName,
       start_today: true,
       threshold: 4,
-      selectedDate: formatDateToInput(/* @__PURE__ */ new Date()),
+      selected_date: formatDateToInput(/* @__PURE__ */ new Date()),
       days: calendar
     };
     const request = await this.db.putData(cardName, initialData);
