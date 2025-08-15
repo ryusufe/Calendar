@@ -1,9 +1,9 @@
 {
     "version": "1.0.0",
     "name": "Calendar",
-    "description": "Calendar plugin for hollow.",
+    "description": "Week-view calendar to quickly add and manage tasks for each day.",
     "author": "ryu",
-    "authorUrl": "https://github.com/Ryusufe/",
+    "authorUrl": "https://github.com/ryusufe/",
     "dbVersion": 1,
     "icon": "CalendarRange"
 }
