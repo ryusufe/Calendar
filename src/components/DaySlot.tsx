@@ -128,7 +128,7 @@ function DayPanel({ cardName, tasks, setTasks, quickDate, date }: DayPanelProps)
 		<div class="w-full flex flex-col gap-1 flex-1 pt-5 overflow-hidden overflow-y-auto">
 			<For each={tasks()}>
 				{
-					(task) => <Task {...{ cardName, task, date, setTasks }} />
+					(task) => <Task {...{ cardName, task: () => task, date, setTasks }} />
 				}
 			</For>
 		</div>

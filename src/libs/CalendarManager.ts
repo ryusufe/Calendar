@@ -71,8 +71,11 @@ export class CalendarManager {
 	}
 
 	public editTask(cardName: string, date: string, task: TaskType) {
-		this.getCalendar(cardName).data?.days.find(i => i.date === date)?.tasks.map(i => i.id === task.id ? task : i);
-		this.update(cardName);
+		const days = this.getCalendar(cardName).data?.days.find(i => i.date === date);
+		if (days) {
+			days.tasks = days.tasks.map(i => i.id === task.id ? task : i);
+			this.update(cardName);
+		}
 	}
 
 	public toggleTask(cardName: string, date: string, id: string, state: boolean) {

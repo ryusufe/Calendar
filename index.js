@@ -1570,8 +1570,11 @@ var CalendarManager = class _CalendarManager {
     }
   }
   editTask(cardName, date, task) {
-    this.getCalendar(cardName).data?.days.find((i) => i.date === date)?.tasks.map((i) => i.id === task.id ? task : i);
-    this.update(cardName);
+    const days = this.getCalendar(cardName).data?.days.find((i) => i.date === date);
+    if (days) {
+      days.tasks = days.tasks.map((i) => i.id === task.id ? task : i);
+      this.update(cardName);
+    }
   }
   toggleTask(cardName, date, id, state) {
     const day = this.getCalendar(cardName).data?.days.find((i) => i.date === date);
@@ -1673,7 +1676,7 @@ ${day.tasks.filter((i) => !i.completed).map((i) => `- ${i.title}`).join("\n") ||
 var import_task = __toESM(require_task());
 
 // src/libs/form.ts
-function openForm(task, setTask) {
+function openForm(task, onSubmit) {
   const form = {
     id: "calendar-task:edit",
     title: "Edit Task",
@@ -1686,9 +1689,7 @@ function openForm(task, setTask) {
         key: "title"
       }
     ],
-    submit: (data) => {
-      setTask((prev) => ({ ...prev, title: data.title }));
-    }
+    submit: onSubmit
   };
   CalendarManager.getSelf().context?.app.emit("Form", form);
 }
@@ -1701,7 +1702,6 @@ function Task({
   task,
   setTasks
 }) {
-  const [myTask, setMyTask] = createSignal(task);
   const onContextMenu = () => {
     const cm = {
       id: "calendar-task",
@@ -1719,28 +1719,36 @@ function Task({
     CalendarManager.getSelf().context?.app.emit("context-menu-extend", cm);
   };
   const toggleState = (e) => {
-    setMyTask((prev) => ({
-      ...prev,
-      completed: e.currentTarget.checked
-    }));
-    CalendarManager.getSelf().toggleTask(cardName, date, task.id, e.currentTarget.checked);
+    const state = e.currentTarget.checked;
+    const tsk = task();
+    setTasks((prev) => [...prev.map((i) => i.id === tsk.id ? {
+      ...tsk,
+      completed: state
+    } : i)]);
+    CalendarManager.getSelf().toggleTask(cardName, date, tsk.id, state);
   };
   const editTask = () => {
-    openForm(myTask(), setMyTask);
-    CalendarManager.getSelf().editTask(cardName, date, myTask());
+    openForm(task(), (data) => {
+      const newTask = {
+        ...task(),
+        title: data.title
+      };
+      setTasks((prev) => [...prev.map((i) => i.id === task().id ? newTask : i)]);
+      CalendarManager.getSelf().editTask(cardName, date, newTask);
+    });
   };
   const removeTask = async () => {
-    await CalendarManager.getSelf().removeTask(cardName, date, task.id);
-    setTasks((prev) => [...prev.filter((i) => i.id !== task.id)]);
+    await CalendarManager.getSelf().removeTask(cardName, date, task().id);
+    setTasks((prev) => [...prev.filter((i) => i.id !== task().id)]);
   };
   return (() => {
     var _el$ = _tmpl$(), _el$2 = _el$.firstChild, _el$3 = _el$2.nextSibling, _el$4 = _el$3.firstChild, _el$5 = _el$4.firstChild, _el$6 = _el$4.nextSibling, _el$7 = _el$3.nextSibling;
     _el$.$$contextmenu = onContextMenu;
     _el$2.addEventListener("change", toggleState);
     _el$5.innerHTML = '<use xlink:href="#check-4"></use>';
-    insert(_el$6, () => myTask().title);
+    insert(_el$6, () => task().title);
     createRenderEffect((_p$) => {
-      var _v$ = import_task.default["checkbox-wrapper-4"], _v$2 = import_task.default["inp-cbx"], _v$3 = myTask().id, _v$4 = import_task.default["cbx"], _v$5 = myTask().id, _v$6 = import_task.default["task-title"], _v$7 = import_task.default["inline-svg"];
+      var _v$ = import_task.default["checkbox-wrapper-4"], _v$2 = import_task.default["inp-cbx"], _v$3 = task().id, _v$4 = import_task.default["cbx"], _v$5 = task().id, _v$6 = import_task.default["task-title"], _v$7 = import_task.default["inline-svg"];
       _v$ !== _p$.e && className(_el$, _p$.e = _v$);
       _v$2 !== _p$.t && className(_el$2, _p$.t = _v$2);
       _v$3 !== _p$.a && setAttribute(_el$2, "id", _p$.a = _v$3);
@@ -1758,7 +1766,7 @@ function Task({
       n: void 0,
       s: void 0
     });
-    createRenderEffect(() => _el$2.checked = myTask().completed);
+    createRenderEffect(() => _el$2.checked = task().completed);
     return _el$;
   })();
 }
@@ -1901,7 +1909,7 @@ function DayPanel({
       },
       children: (task) => createComponent(Task, {
         cardName,
-        task,
+        task: () => task,
         date,
         setTasks
       })

@@ -4,7 +4,7 @@ import { Setter } from "solid-js";
 import { CalendarManager } from "./CalendarManager";
 
 
-export function openForm(task: TaskType, setTask: Setter<TaskType>) {
+export function openForm(task: TaskType, onSubmit: (data: any) => void) {
 
 
 	const form: FormType = {
@@ -19,9 +19,7 @@ export function openForm(task: TaskType, setTask: Setter<TaskType>) {
 				key: "title"
 			}
 		],
-		submit: (data: any) => {
-			setTask(prev => ({ ...prev, title: data.title }))
-		}
+		submit: onSubmit
 	}
 
 
