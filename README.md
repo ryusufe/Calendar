@@ -1,8 +1,8 @@
 
-<h1 align="center" style="font-size: 50px">
+<h1 align="center" style="font-size: 50px;display:flex;align-items:center;">
   CALEN<img src="https://raw.githubusercontent.com/ryusufe/Calendar/refs/heads/main/img/calendar.png" style="height:29px; vertical-align:middle;" />AR
 </h1>
-<p align="center">
+<p align="center" style="display:flex;max-width:200px;">
   <img src="https://raw.githubusercontent.com/ryusufe/Calendar/refs/heads/main/img/1.png" height="350" />
   <img src="https://raw.githubusercontent.com/ryusufe/Calendar/refs/heads/main/img/2.png" height="350" />
   <img src="https://raw.githubusercontent.com/ryusufe/Calendar/refs/heads/main/img/3.png" height="350" />
