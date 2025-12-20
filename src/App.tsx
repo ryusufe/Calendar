@@ -1,63 +1,75 @@
-import Calendar from "@components/Calendar"
-import { CalendarManager } from "@libs/CalendarManager"
-import { CalendarOptions } from "@type/CalendarOptions"
-import { StaticsType } from "@type/StaticsType"
-import { showSettings } from "libs/settings"
-import { Accessor, createEffect, createMemo, createSignal, For, onCleanup, onMount, Show } from "solid-js"
+import Calendar from "@components/Calendar";
+import { CalendarManager } from "@libs/CalendarManager";
+import { CalendarOptions } from "@type/CalendarOptions";
+import { StaticsType } from "@type/StaticsType";
+import { showSettings } from "libs/settings";
+import {
+	Accessor,
+	createEffect,
+	createMemo,
+	createSignal,
+	For,
+	onCleanup,
+	onMount,
+	Show,
+} from "solid-js";
 import styles from "@styles/calendar.module.css";
 
 type AppProps = {
-	cardName: string
-}
+	cardId: string;
+};
 
-export default function App({ cardName }: AppProps) {
-	const statics = createMemo<StaticsType>(() => ({
+export default function App(props: AppProps) {
+	const statics = {
 		keys: {
-			settings: `calendar-${cardName}-settings`
-		}
-	}))
+			settings: `${props.cardId}-settings`,
+		},
+	};
 
-	const [data, setData] = createSignal<CalendarOptions>(CalendarManager.getSelf().getCalendar(cardName).data);
+	const [data, setData] = createSignal<CalendarOptions>(
+		CalendarManager.getSelf().getCalendar(props.cardId),
+	);
 	const onSettings = () => {
-		showSettings(cardName, data, setData, onStartTodayChanged);
-	}
+		showSettings(props.cardId, data, setData, onStartTodayChanged);
+	};
 
 	const onMidnight = (d: string | undefined) => {
-		setData(prev => ({ ...prev, selectedDate: d ?? prev.selected_date }));
-	}
+		setData((prev) => ({ ...prev, selectedDate: d ?? prev.selected_date }));
+	};
 	const onStartTodayChanged = () => {
 		if (data().start_today) {
 			CalendarManager.getSelf().onMidnight(onMidnight);
-		}
-		else {
+		} else {
 			CalendarManager.getSelf().offMidnight(onMidnight);
 		}
-	}
+	};
 
-	const removeDay = (id: string | undefined) => {
-		const prts = id?.split('|');
-		if (prts) {
-			// TODO needs to toggle the reactivity of the effected day
-			CalendarManager.getSelf().onAppRemoveEntry(prts[1], prts[2]);
-		}
-	}
-
+	// const removeDay = (id: string | undefined) => {
+	// 	const prts = id?.split('|');
+	// 	if (prts) {
+	// 		// TODO needs to toggle the reactivity of the effected day
+	// 		CalendarManager.getSelf().onAppRemoveEntry(prts[1], prts[2]);
+	// 	}
+	// }
 
 	onMount(() => {
-		CalendarManager.getSelf().context!.app.on(statics().keys.settings, onSettings);
+		CalendarManager.getSelf().context.app?.on(
+			statics.keys.settings,
+			onSettings,
+		);
 		onStartTodayChanged();
-		CalendarManager.getSelf().context!.toolEvent.on(`${cardName}-remove-entry`, removeDay);
 	});
 	onCleanup(() => {
-		CalendarManager.getSelf().context!.app.off(statics().keys.settings, onSettings);
-		CalendarManager.getSelf().context!.toolEvent.off(`${cardName}-remove-entry`, removeDay);
+		CalendarManager.getSelf().context.app?.off(
+			statics.keys.settings,
+			onSettings,
+		);
 		CalendarManager.getSelf().offMidnight(onMidnight);
 	});
 
-	return <div class={styles["parent"]}>
-		<Calendar {...{ cardName, data, setData }} />
-	</div>
+	return (
+		<div class={styles["parent"]}>
+			<Calendar data={data} setData={setData} cardId={props.cardId} />
+		</div>
+	);
 }
-
-
-

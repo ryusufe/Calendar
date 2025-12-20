@@ -1,12 +1,8 @@
 import { TaskType } from "@type/TaskType";
-import { FormType } from "hollow-api";
-import { Setter } from "solid-js";
+import { FormType } from "types/hollow";
 import { CalendarManager } from "./CalendarManager";
 
-
 export function openForm(task: TaskType, onSubmit: (data: any) => void) {
-
-
 	const form: FormType = {
 		id: "calendar-task:edit",
 		title: "Edit Task",
@@ -16,13 +12,11 @@ export function openForm(task: TaskType, onSubmit: (data: any) => void) {
 				type: "longtext",
 				label: "Title",
 				value: task.title,
-				key: "title"
-			}
+				key: "title",
+			},
 		],
-		submit: onSubmit
-	}
+		submit: onSubmit,
+	};
 
-
-	CalendarManager.getSelf().context?.app.emit("Form", form);
-
+	CalendarManager.getSelf().context.app?.emit("form", form);
 }

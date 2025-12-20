@@ -40,18 +40,19 @@ var require_calendar = __commonJS({
   "src/styles/calendar.module.css"(exports, module2) {
     "use strict";
     (function() {
-      if (!document.getElementById("a61d331f9582408733f70e912bb1c0aa96c345757d2ec1897ae771fc6d28084d")) {
+      if (!document.getElementById("48259bcb7307a400c414a1b30c2b16cb4ad9921d36099b7934494a72f234b86b")) {
         var e = document.createElement("style");
-        e.id = "a61d331f9582408733f70e912bb1c0aa96c345757d2ec1897ae771fc6d28084d";
-        e.textContent = `.calendar-control-bar_d5b067cffa81e45ba71ea95852dde02a_1 {
+        e.id = "48259bcb7307a400c414a1b30c2b16cb4ad9921d36099b7934494a72f234b86b";
+        e.textContent = `.calendar-control-bar_cccec284dc4f9bb914606959132a1cde_1 {
 	/* margin-bottom: calc(var(--spacing) * 2); */
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	font-family: "Helvetica", arial, sans-serif;
 	font-size: 1em;
-	padding: 0.4em;
+	padding: 0.2em;
 	border-radius: 0.3em;
-	background: var(--color-secondary-05);
+	background: var(--color-secondary-10);
 	color: var(--color-secondary-30);
 }
 
@@ -60,7 +61,7 @@ var require_calendar = __commonJS({
 /* } */
 
 
-.calendar-days-container_d5b067cffa81e45ba71ea95852dde02a_18 {
+.calendar-days-container_cccec284dc4f9bb914606959132a1cde_19 {
 	position: relative;
 	/* overflow: hidden; */
 	width: 100%;
@@ -73,7 +74,7 @@ var require_calendar = __commonJS({
 }
 
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31 {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32 {
 	position: relative;
 	height: calc(100% / 7);
 	min-height: 0%;
@@ -88,25 +89,25 @@ var require_calendar = __commonJS({
 	animation: none;
 }
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31:not(.open):hover .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32:not(.open):hover .day-title_cccec284dc4f9bb914606959132a1cde_47 {
 	color: var(--color-secondary-95);
 }
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.open {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32.open {
 	height: 100%;
 	cursor: default;
 	border-width: 0;
-	animation: grto_d5b067cffa81e45ba71ea95852dde02a_1 0.6s linear;
+	animation: grto_cccec284dc4f9bb914606959132a1cde_1 0.6s linear;
 }
 
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.opened {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32.opened {
 	justify-content: start;
 	align-items: start;
-	padding: 1em 0 0 0;
+	padding: 1em;
 }
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.close {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32.close {
 	height: 0;
 	opacity: 0;
 	pointer-events: none;
@@ -114,52 +115,52 @@ var require_calendar = __commonJS({
 
 
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.opened .day-slot-content_d5b067cffa81e45ba71ea95852dde02a_72 {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32.opened .day-slot-content_cccec284dc4f9bb914606959132a1cde_73 {
 	width: 100%;
 	height: 100%;
-	animation: open-up_d5b067cffa81e45ba71ea95852dde02a_1 0.3s linear;
+	animation: open-up_cccec284dc4f9bb914606959132a1cde_1 0.3s linear;
 }
 
-.day-slot-content_d5b067cffa81e45ba71ea95852dde02a_72 {
+.day-slot-content_cccec284dc4f9bb914606959132a1cde_73 {
 	/* margin: auto; */
-	width: fit-content;
+	width: 100%;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
 }
 
-.day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
+.day-title_cccec284dc4f9bb914606959132a1cde_47 {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 2em;
 	color: var(--color-neutral-600);
 }
 
-.dark .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
+.dark .day-title_cccec284dc4f9bb914606959132a1cde_47 {
 	color: var(--color-neutral-400);
 }
 
-.day-slot_d5b067cffa81e45ba71ea95852dde02a_31.open_d5b067cffa81e45ba71ea95852dde02a_46 .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
+.day-slot_cccec284dc4f9bb914606959132a1cde_32.open_cccec284dc4f9bb914606959132a1cde_47 .day-title_cccec284dc4f9bb914606959132a1cde_47 {
 	color: var(--color-neutral-950);
 }
 
-.dark .day-slot_d5b067cffa81e45ba71ea95852dde02a_31.open_d5b067cffa81e45ba71ea95852dde02a_46 .day-title_d5b067cffa81e45ba71ea95852dde02a_46 {
+.dark .day-slot_cccec284dc4f9bb914606959132a1cde_32.open_cccec284dc4f9bb914606959132a1cde_47 .day-title_cccec284dc4f9bb914606959132a1cde_47 {
 	color: var(--color-neutral-50);
 }
 
-.day-date_d5b067cffa81e45ba71ea95852dde02a_105 {
+.day-date_cccec284dc4f9bb914606959132a1cde_106 {
 	color: var(--color-secondary-30);
 }
 
 
 
-.task-checkbox_d5b067cffa81e45ba71ea95852dde02a_111 {}
+.task-checkbox_cccec284dc4f9bb914606959132a1cde_112 {}
 
-.task-content_d5b067cffa81e45ba71ea95852dde02a_113 {
+.task-content_cccec284dc4f9bb914606959132a1cde_114 {
 	text-decoration-color: var(--color-primary);
 }
 
-.task-content_d5b067cffa81e45ba71ea95852dde02a_113.checked {
+.task-content_cccec284dc4f9bb914606959132a1cde_114.checked {
 	text-decoration: line-through;
 }
 
@@ -168,7 +169,7 @@ var require_calendar = __commonJS({
 
 
 
-.date-picker_d5b067cffa81e45ba71ea95852dde02a_126 {
+.date-picker_cccec284dc4f9bb914606959132a1cde_127 {
 	appearance: none;
 	-webkit-appearance: none;
 	display: inline-block !important;
@@ -176,11 +177,11 @@ var require_calendar = __commonJS({
 	cursor: pointer;
 }
 
-.control-section_d5b067cffa81e45ba71ea95852dde02a_134:hover {
+.control-section_cccec284dc4f9bb914606959132a1cde_135:hover {
 	background: var(--color-secondary-10);
 }
 
-.cl-sepa_d5b067cffa81e45ba71ea95852dde02a_138 {
+.cl-sepa_cccec284dc4f9bb914606959132a1cde_139 {
 
 	border: none;
 	width: 100%;
@@ -190,41 +191,35 @@ var require_calendar = __commonJS({
 }
 
 
-.info-button_d5b067cffa81e45ba71ea95852dde02a_148 svg {
-	width: 1.2em;
-	height: 1.2em;
+.info-button_cccec284dc4f9bb914606959132a1cde_149 svg {
+	--size: calc(var(--spacing) * 4);
+	width: var(--size);
+	height: var(--size);
 	color: var(--secondary-color-50);
 }
 
-.info-button_d5b067cffa81e45ba71ea95852dde02a_148:hover svg {
-	color: var(--secondary-color-95);
-}
 
 
 
-
-
-
-
-
-.parent_d5b067cffa81e45ba71ea95852dde02a_165 {
+.parent_cccec284dc4f9bb914606959132a1cde_159 {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	padding: calc(var(--spacing) * 3);
 }
 
 
-.floating-panel_d5b067cffa81e45ba71ea95852dde02a_172 {
+.floating-panel_cccec284dc4f9bb914606959132a1cde_167 {
 	position: absolute;
 	top: 150%;
 	opacity: 1;
-	background-color: var(--secondary-color-05);
+	background-color: var(--secondary-color-10);
 	border-radius: 0.3em;
 	width: 100%;
 	transition: opacity 0.3s ease-in-out;
 	z-index: 10;
 	padding: calc(var(--spacing) * 5);
-	animation: open-up_d5b067cffa81e45ba71ea95852dde02a_1 0.3s forwards;
+	animation: open-up_cccec284dc4f9bb914606959132a1cde_1 0.3s forwards;
 }
 
 
@@ -242,7 +237,7 @@ var require_calendar = __commonJS({
 
 
 
-@keyframes grto_d5b067cffa81e45ba71ea95852dde02a_1 {
+@keyframes grto_cccec284dc4f9bb914606959132a1cde_1 {
 
 	0% {
 		opacity: 1;
@@ -259,7 +254,7 @@ var require_calendar = __commonJS({
 
 }
 
-@keyframes open-up_d5b067cffa81e45ba71ea95852dde02a_1 {
+@keyframes open-up_cccec284dc4f9bb914606959132a1cde_1 {
 
 	from {
 		opacity: 0;
@@ -274,7 +269,7 @@ var require_calendar = __commonJS({
         document.head.appendChild(e);
       }
     })();
-    module2.exports = JSON.parse('{"calendar-control-bar":"calendar-control-bar_d5b067cffa81e45ba71ea95852dde02a_1","calendar-days-container":"calendar-days-container_d5b067cffa81e45ba71ea95852dde02a_18","day-slot":"day-slot_d5b067cffa81e45ba71ea95852dde02a_31","day-title":"day-title_d5b067cffa81e45ba71ea95852dde02a_46","grto":"grto_d5b067cffa81e45ba71ea95852dde02a_1","day-slot-content":"day-slot-content_d5b067cffa81e45ba71ea95852dde02a_72","open-up":"open-up_d5b067cffa81e45ba71ea95852dde02a_1","open":"open_d5b067cffa81e45ba71ea95852dde02a_46","day-date":"day-date_d5b067cffa81e45ba71ea95852dde02a_105","task-checkbox":"task-checkbox_d5b067cffa81e45ba71ea95852dde02a_111","task-content":"task-content_d5b067cffa81e45ba71ea95852dde02a_113","date-picker":"date-picker_d5b067cffa81e45ba71ea95852dde02a_126","control-section":"control-section_d5b067cffa81e45ba71ea95852dde02a_134","cl-sepa":"cl-sepa_d5b067cffa81e45ba71ea95852dde02a_138","info-button":"info-button_d5b067cffa81e45ba71ea95852dde02a_148","parent":"parent_d5b067cffa81e45ba71ea95852dde02a_165","floating-panel":"floating-panel_d5b067cffa81e45ba71ea95852dde02a_172"}');
+    module2.exports = JSON.parse('{"calendar-control-bar":"calendar-control-bar_cccec284dc4f9bb914606959132a1cde_1","calendar-days-container":"calendar-days-container_cccec284dc4f9bb914606959132a1cde_19","day-slot":"day-slot_cccec284dc4f9bb914606959132a1cde_32","day-title":"day-title_cccec284dc4f9bb914606959132a1cde_47","grto":"grto_cccec284dc4f9bb914606959132a1cde_1","day-slot-content":"day-slot-content_cccec284dc4f9bb914606959132a1cde_73","open-up":"open-up_cccec284dc4f9bb914606959132a1cde_1","open":"open_cccec284dc4f9bb914606959132a1cde_47","day-date":"day-date_cccec284dc4f9bb914606959132a1cde_106","task-checkbox":"task-checkbox_cccec284dc4f9bb914606959132a1cde_112","task-content":"task-content_cccec284dc4f9bb914606959132a1cde_114","date-picker":"date-picker_cccec284dc4f9bb914606959132a1cde_127","control-section":"control-section_cccec284dc4f9bb914606959132a1cde_135","cl-sepa":"cl-sepa_cccec284dc4f9bb914606959132a1cde_139","info-button":"info-button_cccec284dc4f9bb914606959132a1cde_149","parent":"parent_cccec284dc4f9bb914606959132a1cde_159","floating-panel":"floating-panel_cccec284dc4f9bb914606959132a1cde_167"}');
   }
 });
 
@@ -283,9 +278,9 @@ var require_task = __commonJS({
   "src/styles/task.module.css"(exports, module2) {
     "use strict";
     (function() {
-      if (!document.getElementById("b6f75142abc62ecd0e57700c1459fa43a6b6d41634f6faece04efe2c75180463")) {
+      if (!document.getElementById("117ff386c5447c0547462a220ad502037fc9abeff39a3c87e6983e951e08a9af")) {
         var e = document.createElement("style");
-        e.id = "b6f75142abc62ecd0e57700c1459fa43a6b6d41634f6faece04efe2c75180463";
+        e.id = "117ff386c5447c0547462a220ad502037fc9abeff39a3c87e6983e951e08a9af";
         e.textContent = `/* by Andreas Storm */
 
 .checkbox-wrapper-4_f5913e756e8776dbec8a83a9ebe470e8_3 * {
@@ -458,7 +453,6 @@ function nextHydrateContext() {
 var IS_DEV = false;
 var equalFn = (a, b) => a === b;
 var $PROXY = Symbol("solid-proxy");
-var SUPPORTS_PROXY = typeof Proxy === "function";
 var $TRACK = Symbol("solid-track");
 var $DEVCOMP = Symbol("solid-dev-component");
 var signalOptions = {
@@ -1082,106 +1076,6 @@ function createComponent(Comp, props) {
   }
   return untrack(() => Comp(props || {}));
 }
-function trueFn() {
-  return true;
-}
-var propTraps = {
-  get(_, property, receiver) {
-    if (property === $PROXY) return receiver;
-    return _.get(property);
-  },
-  has(_, property) {
-    if (property === $PROXY) return true;
-    return _.has(property);
-  },
-  set: trueFn,
-  deleteProperty: trueFn,
-  getOwnPropertyDescriptor(_, property) {
-    return {
-      configurable: true,
-      enumerable: true,
-      get() {
-        return _.get(property);
-      },
-      set: trueFn,
-      deleteProperty: trueFn
-    };
-  },
-  ownKeys(_) {
-    return _.keys();
-  }
-};
-function resolveSource(s) {
-  return !(s = typeof s === "function" ? s() : s) ? {} : s;
-}
-function resolveSources() {
-  for (let i = 0, length = this.length; i < length; ++i) {
-    const v = this[i]();
-    if (v !== void 0) return v;
-  }
-}
-function mergeProps(...sources) {
-  let proxy = false;
-  for (let i = 0; i < sources.length; i++) {
-    const s = sources[i];
-    proxy = proxy || !!s && $PROXY in s;
-    sources[i] = typeof s === "function" ? (proxy = true, createMemo(s)) : s;
-  }
-  if (SUPPORTS_PROXY && proxy) {
-    return new Proxy({
-      get(property) {
-        for (let i = sources.length - 1; i >= 0; i--) {
-          const v = resolveSource(sources[i])[property];
-          if (v !== void 0) return v;
-        }
-      },
-      has(property) {
-        for (let i = sources.length - 1; i >= 0; i--) {
-          if (property in resolveSource(sources[i])) return true;
-        }
-        return false;
-      },
-      keys() {
-        const keys = [];
-        for (let i = 0; i < sources.length; i++) keys.push(...Object.keys(resolveSource(sources[i])));
-        return [...new Set(keys)];
-      }
-    }, propTraps);
-  }
-  const sourcesMap = {};
-  const defined = /* @__PURE__ */ Object.create(null);
-  for (let i = sources.length - 1; i >= 0; i--) {
-    const source = sources[i];
-    if (!source) continue;
-    const sourceKeys = Object.getOwnPropertyNames(source);
-    for (let i2 = sourceKeys.length - 1; i2 >= 0; i2--) {
-      const key = sourceKeys[i2];
-      if (key === "__proto__" || key === "constructor") continue;
-      const desc = Object.getOwnPropertyDescriptor(source, key);
-      if (!defined[key]) {
-        defined[key] = desc.get ? {
-          enumerable: true,
-          configurable: true,
-          get: resolveSources.bind(sourcesMap[key] = [desc.get.bind(source)])
-        } : desc.value !== void 0 ? desc : void 0;
-      } else {
-        const sources2 = sourcesMap[key];
-        if (sources2) {
-          if (desc.get) sources2.push(desc.get.bind(source));
-          else if (desc.value !== void 0) sources2.push(() => desc.value);
-        }
-      }
-    }
-  }
-  const target = {};
-  const definedKeys = Object.keys(defined);
-  for (let i = definedKeys.length - 1; i >= 0; i--) {
-    const key = definedKeys[i], desc = defined[key];
-    if (desc && desc.get) Object.defineProperty(target, key, desc);
-    else target[key] = desc ? desc.value : void 0;
-  }
-  return target;
-}
 var narrowedError = (name) => `Stale read from <${name}>.`;
 function For(props) {
   const fallback = "fallback" in props && {
@@ -1518,9 +1412,8 @@ function prettyDate(date) {
 
 // src/libs/CalendarManager.ts
 var CalendarManager = class _CalendarManager {
-  context = null;
+  context = {};
   static self;
-  calendars = [];
   midnights = 0;
   dailyInterval = null;
   midnightTimeout = null;
@@ -1531,73 +1424,68 @@ var CalendarManager = class _CalendarManager {
     }
     return this.self;
   }
-  adjustContext({ db, toolEvent, app }) {
-    if (!this.context) {
-      this.context = { db, toolEvent, app };
-    }
+  adjustContext(context) {
+    this.context = context;
   }
-  // #2
-  addCalendar(cal) {
-    this.calendars.push({ ...cal, data: { ...cal.data, selected_date: cal.data.start_today ? formatDateToInput(/* @__PURE__ */ new Date()) : cal.data.selected_date } });
-  }
-  getCalendar(cardName) {
-    return this.calendars.find((i) => i.card == cardName);
+  getCalendar(cardId) {
+    return this.context.store?.get(cardId);
   }
   // #3
-  addTask(cardName, date, task) {
-    const calendar2 = this.getCalendar(cardName);
-    let day = calendar2?.data?.days.find((i) => i.date === date);
+  addTask(cardId, date, task) {
+    const calendar2 = this.getCalendar(cardId);
+    let day = calendar2?.days.find((i) => i.date === date);
     if (!day) {
       day = { date, tasks: [task] };
-      calendar2?.data?.days.push(day);
+      calendar2?.days.push(day);
     } else {
       day.tasks.push(task);
     }
-    this.addEntry(cardName, day);
-    this.update(cardName);
+    this.update(cardId, calendar2);
   }
-  async removeTask(cardName, date, id) {
-    const day = this.getCalendar(cardName)?.data?.days.find((i) => i.date === date);
+  async removeTask(cardId, date, id) {
+    const calendar2 = this.getCalendar(cardId);
+    const day = calendar2?.days.find((i) => i.date === date);
     if (day) {
       if (day?.tasks.length === 1) {
-        this.getCalendar(cardName).data.days = this.getCalendar(cardName)?.data.days.filter((i) => i.date !== date);
-        this.removeEntry(cardName, date);
+        calendar2.days = calendar2.days.filter((i) => i.date !== date);
       } else {
         day.tasks = day.tasks.filter((i) => i.id !== id);
-        this.addEntry(cardName, day);
       }
-      await this.update(cardName);
+      this.update(cardId, calendar2);
     }
   }
-  editTask(cardName, date, task) {
-    const days = this.getCalendar(cardName).data?.days.find((i) => i.date === date);
+  editTask(cardId, date, task) {
+    const calendar2 = this.getCalendar(cardId);
+    const days = calendar2.days.find((i) => i.date === date);
     if (days) {
       days.tasks = days.tasks.map((i) => i.id === task.id ? task : i);
-      this.update(cardName);
+      this.update(cardId, calendar2);
     }
   }
-  toggleTask(cardName, date, id, state) {
-    const day = this.getCalendar(cardName).data?.days.find((i) => i.date === date);
+  toggleTask(cardId, date, id, state) {
+    const calendar2 = this.getCalendar(cardId);
+    const day = calendar2.days.find((i) => i.date === date);
     if (day) {
-      day.tasks = day.tasks.map((i) => i.id === id ? { ...i, completed: state } : i);
-      this.update(cardName);
-      this.addEntry(cardName, day);
+      day.tasks = day.tasks.map(
+        (i) => i.id === id ? { ...i, completed: state } : i
+      );
+      this.update(cardId, calendar2);
     }
   }
-  getTasks(cardName, date) {
-    return this.getCalendar(cardName).data.days.find((i) => i.date === date)?.tasks ?? [];
+  getTasks(cardId, date) {
+    return this.getCalendar(cardId).days.find((i) => i.date === date)?.tasks ?? [];
   }
-  setSelectedDate(cardName, date) {
-    this.getCalendar(cardName).data.selected_date = date;
-    this.update(cardName);
+  setSelectedDate(cardId, date) {
+    const calendar2 = this.getCalendar(cardId);
+    calendar2.selected_date = date;
+    this.update(cardId, calendar2);
   }
-  setCalendarData(cardName, data) {
-    const cal = this.getCalendar(cardName);
-    cal.data = { ...cal.data, ...data };
-    this.update(cardName);
+  setCalendarData(cardId, data) {
+    const cal = this.getCalendar(cardId);
+    this.update(cardId, { ...cal, ...data });
   }
-  async update(cardName) {
-    await this.context?.db.putData(cardName, this.getCalendar(cardName).data);
+  update(cardId, data) {
+    this.context.store?.set(cardId, data);
   }
   // glob
   onMidnight(callback) {
@@ -1613,7 +1501,10 @@ var CalendarManager = class _CalendarManager {
         0
       );
       const notify = () => {
-        this.context?.toolEvent.emit("midnight", formatDateToInput(/* @__PURE__ */ new Date()));
+        this.context.toolEvent?.emit(
+          "midnight",
+          formatDateToInput(/* @__PURE__ */ new Date())
+        );
       };
       const msUntilMidnight = nextMidnight.getTime() - now.getTime();
       this.midnightTimeout = setTimeout(() => {
@@ -1622,53 +1513,15 @@ var CalendarManager = class _CalendarManager {
       }, msUntilMidnight);
     }
     this.midnights += 1;
-    this.context?.toolEvent.on("midnight", callback);
+    this.context.toolEvent?.on("midnight", callback);
   }
   offMidnight(callback) {
     this.midnights -= 1;
-    this.context?.toolEvent.off("midnight", callback);
+    this.context.toolEvent?.off("midnight", callback);
     if (this.midnights === 0) {
       this.dailyInterval && clearInterval(this.dailyInterval);
       this.midnightTimeout && clearInterval(this.midnightTimeout);
     }
-  }
-  addEntry(cardName, day) {
-    const n_tasks = day.tasks.length;
-    const n_tasks_x = day.tasks.filter((i) => i.completed).length;
-    const pDate = prettyDate(day.date);
-    const entry = {
-      id: `calendar|${cardName}|${day.date}`,
-      source: {
-        tool: "calendar",
-        card: cardName
-      },
-      title: `Day: ${pDate}`,
-      content: `# Tasks for ${pDate}
-
----
-
-## \u2705 Finished Tasks
-${day.tasks.filter((i) => i.completed).map((i) => `- ${i.title}`).join("\n") || "_No finished tasks_"}
-
-## \u274C Unfinished Tasks
-${day.tasks.filter((i) => !i.completed).map((i) => `- ${i.title}`).join("\n") || "_No unfinished tasks_"}
-`,
-      tags: [],
-      meta: {
-        "ToTal Tasks": n_tasks,
-        "Tasks Finished": n_tasks_x,
-        "Tasks Unfinished": n_tasks - n_tasks_x
-      }
-    };
-    this.context?.app.emit("receive-entry", entry);
-  }
-  removeEntry(cardName, date) {
-    this.context?.app.emit("remove-entry", `calendar|${cardName}|${date}`);
-  }
-  onAppRemoveEntry(cardName, date) {
-    const dt = this.getCalendar(cardName).data;
-    dt.days = dt.days.filter((i) => i.date !== date);
-    this.update(cardName);
   }
 };
 
@@ -1691,64 +1544,59 @@ function openForm(task, onSubmit) {
     ],
     submit: onSubmit
   };
-  CalendarManager.getSelf().context?.app.emit("Form", form);
+  CalendarManager.getSelf().context.app?.emit("form", form);
 }
 
 // src/components/Task.tsx
 var _tmpl$ = /* @__PURE__ */ template(`<div><input type=checkbox><label><span><svg width=12px height=10px></svg></span><span></span></label><svg><symbol id=check-4 viewBox="0 0 12 10"><polyline points="1.5 6 4.5 9 10.5 1">`);
-function Task({
-  cardName,
-  date,
-  task,
-  setTasks
-}) {
+function Task(props) {
   const onContextMenu = () => {
     const cm = {
       id: "calendar-task",
       header: "Calendar Task",
       items: [{
+        icon: "edit-pen-outline",
         label: "Edit",
-        icon: "PenLine",
         onclick: editTask
       }, {
-        icon: "Trash2",
+        icon: "trash",
         label: "Delete",
         onclick: removeTask
       }]
     };
-    CalendarManager.getSelf().context?.app.emit("context-menu-extend", cm);
+    CalendarManager.getSelf().context.app?.emit("context-menu-extend", cm);
   };
   const toggleState = (e) => {
     const state = e.currentTarget.checked;
-    const tsk = task();
-    setTasks((prev) => [...prev.map((i) => i.id === tsk.id ? {
+    const tsk = props.task();
+    props.setTasks((prev) => [...prev.map((i) => i.id === tsk.id ? {
       ...tsk,
       completed: state
     } : i)]);
-    CalendarManager.getSelf().toggleTask(cardName, date, tsk.id, state);
+    CalendarManager.getSelf().toggleTask(props.cardId, props.date, tsk.id, state);
   };
   const editTask = () => {
-    openForm(task(), (data) => {
+    openForm(props.task(), (data) => {
       const newTask = {
-        ...task(),
+        ...props.task(),
         title: data.title
       };
-      setTasks((prev) => [...prev.map((i) => i.id === task().id ? newTask : i)]);
-      CalendarManager.getSelf().editTask(cardName, date, newTask);
+      props.setTasks((prev) => [...prev.map((i) => i.id === props.task().id ? newTask : i)]);
+      CalendarManager.getSelf().editTask(props.cardId, props.date, newTask);
     });
   };
   const removeTask = async () => {
-    await CalendarManager.getSelf().removeTask(cardName, date, task().id);
-    setTasks((prev) => [...prev.filter((i) => i.id !== task().id)]);
+    await CalendarManager.getSelf().removeTask(props.cardId, props.date, props.task().id);
+    props.setTasks((prev) => [...prev.filter((i) => i.id !== props.task().id)]);
   };
   return (() => {
     var _el$ = _tmpl$(), _el$2 = _el$.firstChild, _el$3 = _el$2.nextSibling, _el$4 = _el$3.firstChild, _el$5 = _el$4.firstChild, _el$6 = _el$4.nextSibling, _el$7 = _el$3.nextSibling;
     _el$.$$contextmenu = onContextMenu;
     _el$2.addEventListener("change", toggleState);
     _el$5.innerHTML = '<use xlink:href="#check-4"></use>';
-    insert(_el$6, () => task().title);
+    insert(_el$6, () => props.task().title);
     createRenderEffect((_p$) => {
-      var _v$ = import_task.default["checkbox-wrapper-4"], _v$2 = import_task.default["inp-cbx"], _v$3 = task().id, _v$4 = import_task.default["cbx"], _v$5 = task().id, _v$6 = import_task.default["task-title"], _v$7 = import_task.default["inline-svg"];
+      var _v$ = import_task.default["checkbox-wrapper-4"], _v$2 = import_task.default["inp-cbx"], _v$3 = props.task().id, _v$4 = import_task.default["cbx"], _v$5 = props.task().id, _v$6 = import_task.default["task-title"], _v$7 = import_task.default["inline-svg"];
       _v$ !== _p$.e && className(_el$, _p$.e = _v$);
       _v$2 !== _p$.t && className(_el$2, _p$.t = _v$2);
       _v$3 !== _p$.a && setAttribute(_el$2, "id", _p$.a = _v$3);
@@ -1766,44 +1614,38 @@ function Task({
       n: void 0,
       s: void 0
     });
-    createRenderEffect(() => _el$2.checked = task().completed);
+    createRenderEffect(() => _el$2.checked = props.task().completed);
     return _el$;
   })();
 }
 delegateEvents(["contextmenu"]);
 
 // src/components/DaySlot.tsx
-var _tmpl$2 = /* @__PURE__ */ template(`<div class="flex justify-between items-center"><h2></h2><button class=button-control>`);
+var _tmpl$2 = /* @__PURE__ */ template(`<div class="flex justify-between items-center"><h2></h2><button>`);
 var _tmpl$22 = /* @__PURE__ */ template(`<div><div>`);
-var _tmpl$3 = /* @__PURE__ */ template(`<div class="flex flex-col justify-between items-center relative"><h2></h2><span class="group-hover:opacity-100 opacity-0 text-xs text-secondary-40 absolute duration-300 transition-opacity">`);
-var _tmpl$4 = /* @__PURE__ */ template(`<span>`);
-var _tmpl$5 = /* @__PURE__ */ template(`<div class="w-full flex flex-col gap-1 flex-1 pt-5 overflow-hidden overflow-y-auto">`);
-var _tmpl$6 = /* @__PURE__ */ template(`<input class=color-secondary-50 placeholder="Add a new task...">`);
-function DaySlot({
-  cardName,
-  id,
-  date,
-  openPanel,
-  setOpenPanel
-}) {
+var _tmpl$3 = /* @__PURE__ */ template(`<div class="flex flex-col justify-between items-center relative w-full"><h2></h2><span class="group-hover:opacity-100 opacity-0 w-fit text-xs text-secondary-40 absolute duration-300 transition-opacity">`);
+var _tmpl$4 = /* @__PURE__ */ template(`<span class="text-secondary-50 text-sm">`);
+var _tmpl$5 = /* @__PURE__ */ template(`<div class="w-full flex flex-col gap-1 flex-1 pt-5 overflow-hprops.indexden overflow-y-auto">`);
+var _tmpl$6 = /* @__PURE__ */ template(`<input class=text-secondary-40 placeholder="Add a new task...">`);
+function DaySlot(props) {
   let parentDiv;
   const [isOpen, setOpen] = createSignal(false);
-  const [tasks, setTasks] = createSignal([...CalendarManager.getSelf().getTasks(cardName, date)]);
+  const [tasks, setTasks] = createSignal([...CalendarManager.getSelf().getTasks(props.cardId, props.date)]);
   const dayData = createMemo(() => {
     const n_tasks = tasks().length;
     const tasks_x = tasks().reduce((c, i) => c + (i.completed ? 1 : 0), 0);
     return {
-      quickDate: prettyDate(date),
+      quickDate: prettyDate(props.date),
       n_tasks,
       n_tasks_x: tasks_x
     };
   });
   const open = () => {
-    setOpenPanel(id);
+    props.setOpenPanel(props.index);
     parentDiv.removeEventListener("click", open);
   };
   const close = () => {
-    setOpenPanel(null);
+    props.setOpenPanel(null);
     setOpen(false);
     parentDiv.addEventListener("click", open);
   };
@@ -1811,7 +1653,7 @@ function DaySlot({
     setOpen(true);
   };
   createEffect(() => {
-    if (openPanel() === null) {
+    if (props.openPanel() === null) {
       setOpen(false);
     }
   });
@@ -1833,7 +1675,7 @@ function DaySlot({
       get fallback() {
         return (() => {
           var _el$6 = _tmpl$3(), _el$7 = _el$6.firstChild, _el$8 = _el$7.nextSibling;
-          insert(_el$7, () => getDayName(date));
+          insert(_el$7, () => getDayName(props.date));
           _el$8.style.setProperty("top", "3em");
           insert(_el$8, () => `${dayData().quickDate} | ${dayData().n_tasks_x}:${dayData().n_tasks}`);
           createRenderEffect(() => className(_el$7, `${import_calendar.default["day-title"]} px-2`));
@@ -1843,27 +1685,41 @@ function DaySlot({
       get children() {
         return [(() => {
           var _el$3 = _tmpl$2(), _el$4 = _el$3.firstChild, _el$5 = _el$4.nextSibling;
-          insert(_el$4, () => getDayName(date));
+          insert(_el$4, () => getDayName(props.date));
           _el$5.$$click = close;
           _el$5.innerHTML = panel_top_close_default;
-          createRenderEffect(() => className(_el$4, `${import_calendar.default["day-title"]}`));
+          createRenderEffect((_p$) => {
+            var _v$ = `${import_calendar.default["day-title"]}`, _v$2 = "button-control " + import_calendar.default["info-button"];
+            _v$ !== _p$.e && className(_el$4, _p$.e = _v$);
+            _v$2 !== _p$.t && className(_el$5, _p$.t = _v$2);
+            return _p$;
+          }, {
+            e: void 0,
+            t: void 0
+          });
           return _el$3;
-        })(), createComponent(DayPanel, mergeProps(() => ({
-          cardName,
+        })(), createComponent(DayPanel, {
+          get cardId() {
+            return props.cardId;
+          },
           tasks,
           setTasks,
-          quickDate: dayData().quickDate,
-          date
-        })))];
+          get quickDate() {
+            return dayData().quickDate;
+          },
+          get date() {
+            return props.date;
+          }
+        })];
       }
     }));
     createRenderEffect((_p$) => {
-      var _v$ = `group ${import_calendar.default["day-slot"]} relative`, _v$2 = !!(openPanel() === id()), _v$3 = !!(openPanel() !== null && openPanel() !== id()), _v$4 = !!isOpen(), _v$5 = import_calendar.default["day-slot-content"];
-      _v$ !== _p$.e && className(_el$, _p$.e = _v$);
-      _v$2 !== _p$.t && _el$.classList.toggle("open", _p$.t = _v$2);
-      _v$3 !== _p$.a && _el$.classList.toggle("close", _p$.a = _v$3);
-      _v$4 !== _p$.o && _el$.classList.toggle("opened", _p$.o = _v$4);
-      _v$5 !== _p$.i && className(_el$2, _p$.i = _v$5);
+      var _v$3 = `group ${import_calendar.default["day-slot"]} relative`, _v$4 = !!(props.openPanel() === props.index()), _v$5 = !!(props.openPanel() !== null && props.openPanel() !== props.index()), _v$6 = !!isOpen(), _v$7 = import_calendar.default["day-slot-content"];
+      _v$3 !== _p$.e && className(_el$, _p$.e = _v$3);
+      _v$4 !== _p$.t && _el$.classList.toggle("open", _p$.t = _v$4);
+      _v$5 !== _p$.a && _el$.classList.toggle("close", _p$.a = _v$5);
+      _v$6 !== _p$.o && _el$.classList.toggle("opened", _p$.o = _v$6);
+      _v$7 !== _p$.i && className(_el$2, _p$.i = _v$7);
       return _p$;
     }, {
       e: void 0,
@@ -1875,13 +1731,7 @@ function DaySlot({
     return _el$;
   })();
 }
-function DayPanel({
-  cardName,
-  tasks,
-  setTasks,
-  quickDate,
-  date
-}) {
+function DayPanel(props) {
   const submitTask = (e) => {
     if (e.key === "Enter") {
       const input = e.currentTarget;
@@ -1891,27 +1741,32 @@ function DayPanel({
         title: input.value.trim(),
         completed: false
       };
-      CalendarManager.getSelf().addTask(cardName, date, newTask);
-      setTasks((prev) => [...prev, newTask]);
+      CalendarManager.getSelf().addTask(props.cardId, props.date, newTask);
+      props.setTasks((prev) => [...prev, newTask]);
       input.value = "";
     }
   };
   return [(() => {
     var _el$9 = _tmpl$4();
-    insert(_el$9, quickDate);
-    createRenderEffect(() => className(_el$9, import_calendar.default["day-date"]));
+    insert(_el$9, () => props.quickDate);
     return _el$9;
   })(), (() => {
     var _el$0 = _tmpl$5();
     insert(_el$0, createComponent(For, {
       get each() {
-        return tasks();
+        return props.tasks();
       },
       children: (task) => createComponent(Task, {
-        cardName,
+        get cardId() {
+          return props.cardId;
+        },
         task: () => task,
-        date,
-        setTasks
+        get date() {
+          return props.date;
+        },
+        get setTasks() {
+          return props.setTasks;
+        }
       })
     }));
     return _el$0;
@@ -1931,19 +1786,15 @@ var calendar_default = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24
 var circle_check_big_default = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big-icon lucide-circle-check-big"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>\n';
 
 // src/components/Calendar.tsx
-var _tmpl$7 = /* @__PURE__ */ template(`<div class="@container h-full relative flex flex-col"><div class=relative><div><input type=date><button></button></div></div><div>`);
+var _tmpl$7 = /* @__PURE__ */ template(`<div class="@container h-full relative flex flex-col"><div class=relative><div><button class="button-control text-xs"></button><button></button></div></div><div>`);
 var _tmpl$23 = /* @__PURE__ */ template(`<hr>`);
 var _tmpl$32 = /* @__PURE__ */ template(`<div><div class="flex gap-2 items-center"><div></div><h1 class="font-bold text-xl"></h1></div><div class="text-sm font-medium mt-4 mb-2 flex items-center gap-1"><div></div><h2 class=text-secondary-70>Daily Tasks</h2></div><div class="flex gap-1">`);
 var _tmpl$42 = /* @__PURE__ */ template(`<div class="flex flex-col text-xs items-center"><h4></h4><p class="px-2 py-1 bg-secondary-10 rounded">`);
-function Calendar({
-  cardName,
-  data,
-  setData
-}) {
+function Calendar(props) {
   const [openPanel, setOpenPanel] = createSignal(null);
   const [isInfo, setInfo] = createSignal(false);
   const week = createMemo(() => {
-    const start = new Date(data().selected_date);
+    const start = new Date(props.data().selected_date);
     return Array.from({
       length: 7
     }, (_, i) => {
@@ -1952,20 +1803,74 @@ function Calendar({
       return formatDateToInput(day);
     });
   });
-  const changeSelectedDate = (e) => {
+  const changeSelectedDate = () => {
     setOpenPanel(null);
     setInfo(false);
-    const sda = e.currentTarget.value;
-    setData((prev) => ({
-      ...prev,
-      selected_date: sda
-    }));
-    CalendarManager.getSelf().setSelectedDate(cardName, sda);
+    let selected_date = props.data().selected_date;
+    const start = new Date(selected_date);
+    const end = new Date(start);
+    end.setDate(start.getDate() + 6);
+    const toISO = (d) => d.toISOString().split("T")[0];
+    CalendarManager.getSelf().context.app?.emit("date-picker", {
+      options: {
+        type: "multiple",
+        enableWeekNumbers: true,
+        displayMonthsCount: 2,
+        selectionDatesMode: "multiple-ranged",
+        selectedDates: [toISO(start), toISO(end)],
+        onClickWeekNumber(self, number, year, dateEls) {
+          const selectedDates = dateEls.map((dateEl) => dateEl.dataset.vcDate);
+          self.set({
+            selectedDates
+          }, {
+            dates: true
+          });
+          selected_date = selectedDates[0];
+        },
+        onClickDate(self) {
+          const selected = self.context.selectedDates;
+          if (selected.length === 2) {
+            const start2 = new Date(selected[0]);
+            const end2 = new Date(selected[1]);
+            const MS_PER_DAY = 1e3 * 60 * 60 * 24;
+            const diffDays = Math.round((end2.getTime() - start2.getTime()) / MS_PER_DAY) + 1;
+            if (diffDays !== 7) {
+              self.update({
+                selectedDates: []
+              });
+              return;
+            }
+            const days = [];
+            const current = new Date(start2);
+            while (current <= end2) {
+              days.push(current.toISOString().split("T")[0]);
+              current.setDate(current.getDate() + 1);
+            }
+            selected_date = days[0];
+          }
+        }
+      },
+      onSave: () => {
+        props.setData((prev) => ({
+          ...prev,
+          selected_date
+        }));
+        CalendarManager.getSelf().setSelectedDate(props.cardId, selected_date);
+      }
+    });
   };
   return (() => {
     var _el$ = _tmpl$7(), _el$2 = _el$.firstChild, _el$3 = _el$2.firstChild, _el$4 = _el$3.firstChild, _el$5 = _el$4.nextSibling, _el$6 = _el$2.nextSibling;
-    _el$4.addEventListener("change", changeSelectedDate);
+    _el$4.$$click = changeSelectedDate;
+    _el$4.style.setProperty("--w", "fit-content");
+    _el$4.style.setProperty("--h", "fit-content");
+    _el$4.style.setProperty("--px", "1.5");
+    _el$4.style.setProperty("--py", "1.5");
+    _el$4.style.setProperty("--border-radius", "var(--radius-md)");
+    insert(_el$4, () => props.data().selected_date);
     _el$5.$$click = () => setInfo((prev) => !prev);
+    _el$5.style.setProperty("--border-radius", "var(--radius-sm)");
+    _el$5.style.setProperty("--size", "calc(var(--spacing) * 7)");
     _el$5.innerHTML = calendar_default;
     insert(_el$2, createComponent(Show, {
       get when() {
@@ -1973,8 +1878,12 @@ function Calendar({
       },
       get children() {
         return createComponent(FloatingPanel, {
-          cardName,
-          data,
+          get cardId() {
+            return props.cardId;
+          },
+          get data() {
+            return props.data;
+          },
           week
         });
       }
@@ -1983,23 +1892,24 @@ function Calendar({
       get each() {
         return week();
       },
-      children: (i, index) => [createComponent(DaySlot, mergeProps({
-        id: index,
-        date: i
-      }, {
-        cardName,
+      children: (i, index) => [createComponent(DaySlot, {
+        index,
+        date: i,
+        get cardId() {
+          return props.cardId;
+        },
         openPanel,
         setOpenPanel
-      })), createComponent(Show, {
+      }), createComponent(Show, {
         get when() {
           return memo(() => index() < 6)() && openPanel() === null;
         },
         get children() {
           var _el$7 = _tmpl$23();
           createRenderEffect((_p$) => {
-            var _v$5 = import_calendar2.default["cl-sepa"], _v$6 = index();
-            _v$5 !== _p$.e && className(_el$7, _p$.e = _v$5);
-            _v$6 !== _p$.t && setAttribute(_el$7, "data-of", _p$.t = _v$6);
+            var _v$4 = import_calendar2.default["cl-sepa"], _v$5 = index();
+            _v$4 !== _p$.e && className(_el$7, _p$.e = _v$4);
+            _v$5 !== _p$.t && setAttribute(_el$7, "data-of", _p$.t = _v$5);
             return _p$;
           }, {
             e: void 0,
@@ -2010,40 +1920,33 @@ function Calendar({
       })]
     }));
     createRenderEffect((_p$) => {
-      var _v$ = import_calendar2.default["calendar-control-bar"], _v$2 = import_calendar2.default["date-picker"], _v$3 = import_calendar2.default["info-button"], _v$4 = import_calendar2.default["calendar-days-container"];
+      var _v$ = import_calendar2.default["calendar-control-bar"], _v$2 = "button-control " + import_calendar2.default["info-button"], _v$3 = import_calendar2.default["calendar-days-container"];
       _v$ !== _p$.e && className(_el$3, _p$.e = _v$);
-      _v$2 !== _p$.t && className(_el$4, _p$.t = _v$2);
-      _v$3 !== _p$.a && className(_el$5, _p$.a = _v$3);
-      _v$4 !== _p$.o && className(_el$6, _p$.o = _v$4);
+      _v$2 !== _p$.t && className(_el$5, _p$.t = _v$2);
+      _v$3 !== _p$.a && className(_el$6, _p$.a = _v$3);
       return _p$;
     }, {
       e: void 0,
       t: void 0,
-      a: void 0,
-      o: void 0
+      a: void 0
     });
-    createRenderEffect(() => _el$4.value = data().selected_date);
     return _el$;
   })();
 }
-function FloatingPanel({
-  cardName,
-  data,
-  week
-}) {
-  const days = createMemo(() => CalendarManager.getSelf().getCalendar(cardName).data.days);
+function FloatingPanel(props) {
+  const days = createMemo(() => CalendarManager.getSelf().getCalendar(props.cardId).days);
   return (() => {
     var _el$8 = _tmpl$32(), _el$9 = _el$8.firstChild, _el$0 = _el$9.firstChild, _el$1 = _el$0.nextSibling, _el$10 = _el$9.nextSibling, _el$11 = _el$10.firstChild, _el$12 = _el$10.nextSibling;
     _el$0.style.setProperty("width", "1.2em");
     _el$0.style.setProperty("height", "1.2em");
     _el$0.innerHTML = calendar_default;
-    insert(_el$1, () => data().name);
+    insert(_el$1, () => props.data().name);
     _el$11.style.setProperty("width", "1.1em");
     _el$11.style.setProperty("height", "1.1em");
     _el$11.innerHTML = circle_check_big_default;
     insert(_el$12, createComponent(For, {
       get each() {
-        return week();
+        return props.week();
       },
       children: (day) => {
         const numberOfTasks = days().find((i) => i.date === day)?.tasks.length ?? 0;
@@ -2054,9 +1957,9 @@ function FloatingPanel({
           _el$15.style.setProperty("height", "2em");
           insert(_el$15, numberOfTasks);
           createRenderEffect((_p$) => {
-            var _v$7 = numberOfTasks < Math.floor(data().threshold / 2) ? "var(--secondary-color-10)" : numberOfTasks >= data().threshold ? "#eb4034" : "#F6E05E", _v$8 = numberOfTasks >= Math.floor(data().threshold / 2) && numberOfTasks < data().threshold ? "black" : "text-secondary-95";
-            _v$7 !== _p$.e && ((_p$.e = _v$7) != null ? _el$15.style.setProperty("background", _v$7) : _el$15.style.removeProperty("background"));
-            _v$8 !== _p$.t && ((_p$.t = _v$8) != null ? _el$15.style.setProperty("color", _v$8) : _el$15.style.removeProperty("color"));
+            var _v$6 = numberOfTasks < Math.floor(props.data().threshold / 2) ? "var(--secondary-color-15)" : numberOfTasks >= props.data().threshold ? "#eb4034" : "#F6E05E", _v$7 = numberOfTasks >= Math.floor(props.data().threshold / 2) && numberOfTasks < props.data().threshold ? "black" : "text-secondary-95";
+            _v$6 !== _p$.e && ((_p$.e = _v$6) != null ? _el$15.style.setProperty("background", _v$6) : _el$15.style.removeProperty("background"));
+            _v$7 !== _p$.t && ((_p$.t = _v$7) != null ? _el$15.style.setProperty("color", _v$7) : _el$15.style.removeProperty("color"));
             return _p$;
           }, {
             e: void 0,
@@ -2083,14 +1986,14 @@ function showSettings(cardName, data, setData, onSTChanged) {
         label: "Name",
         description: "Name of this calendar.",
         value: data().name,
-        onChange: (s) => setData((prev) => ({ ...prev, name: s }))
+        onAction: (s) => setData((prev) => ({ ...prev, name: s }))
       },
       {
         type: "boolean",
         label: "Start Today",
         description: "Update the view to start from today automatically.",
         value: data().start_today,
-        onChange: (v) => {
+        onAction: (v) => {
           setData((prev) => ({ ...prev, start_today: v }));
           onSTChanged();
         }
@@ -2100,30 +2003,28 @@ function showSettings(cardName, data, setData, onSTChanged) {
         label: "Threshold",
         description: "Number of tasks after which the day is considered busy.",
         value: data().threshold,
-        onChange: (n) => setData((prev) => ({ ...prev, threshold: n }))
+        onAction: (n) => setData((prev) => ({ ...prev, threshold: n }))
       }
     ],
     save: () => {
       CalendarManager.getSelf().setCalendarData(cardName, data());
     }
   };
-  CalendarManager.getSelf().context?.app.emit("tool-settings", settings);
+  CalendarManager.getSelf().context.app?.emit("tool-settings", settings);
 }
 
 // src/App.tsx
 var import_calendar4 = __toESM(require_calendar());
 var _tmpl$8 = /* @__PURE__ */ template(`<div>`);
-function App({
-  cardName
-}) {
-  const statics = createMemo(() => ({
+function App(props) {
+  const statics = {
     keys: {
-      settings: `calendar-${cardName}-settings`
+      settings: `${props.cardId}-settings`
     }
-  }));
-  const [data, setData] = createSignal(CalendarManager.getSelf().getCalendar(cardName).data);
+  };
+  const [data, setData] = createSignal(CalendarManager.getSelf().getCalendar(props.cardId));
   const onSettings = () => {
-    showSettings(cardName, data, setData, onStartTodayChanged);
+    showSettings(props.cardId, data, setData, onStartTodayChanged);
   };
   const onMidnight = (d) => {
     setData((prev) => ({
@@ -2138,28 +2039,22 @@ function App({
       CalendarManager.getSelf().offMidnight(onMidnight);
     }
   };
-  const removeDay = (id) => {
-    const prts = id?.split("|");
-    if (prts) {
-      CalendarManager.getSelf().onAppRemoveEntry(prts[1], prts[2]);
-    }
-  };
   onMount(() => {
-    CalendarManager.getSelf().context.app.on(statics().keys.settings, onSettings);
+    CalendarManager.getSelf().context.app?.on(statics.keys.settings, onSettings);
     onStartTodayChanged();
-    CalendarManager.getSelf().context.toolEvent.on(`${cardName}-remove-entry`, removeDay);
   });
   onCleanup(() => {
-    CalendarManager.getSelf().context.app.off(statics().keys.settings, onSettings);
-    CalendarManager.getSelf().context.toolEvent.off(`${cardName}-remove-entry`, removeDay);
+    CalendarManager.getSelf().context.app?.off(statics.keys.settings, onSettings);
     CalendarManager.getSelf().offMidnight(onMidnight);
   });
   return (() => {
     var _el$ = _tmpl$8();
     insert(_el$, createComponent(Calendar, {
-      cardName,
       data,
-      setData
+      setData,
+      get cardId() {
+        return props.cardId;
+      }
     }));
     createRenderEffect(() => className(_el$, import_calendar4.default["parent"]));
     return _el$;
@@ -2175,49 +2070,90 @@ var calendar = [
 ];
 var Main = class {
   roots = /* @__PURE__ */ new Map();
-  db;
-  constructor(db) {
-    this.db = db;
+  constructor(app, toolEvent) {
+    const store = toolEvent.getData("config");
+    CalendarManager.getSelf().adjustContext({
+      store,
+      toolEvent,
+      app
+    });
   }
-  async onCreate(cardName) {
-    const initialData = {
-      name: cardName,
-      start_today: true,
-      threshold: 4,
-      selected_date: formatDateToInput(/* @__PURE__ */ new Date()),
-      days: calendar
-    };
-    const request = await this.db.putData(cardName, initialData);
-    return request;
+  async onCreate(card) {
+    try {
+      const initialData = {
+        name: card.data.name,
+        start_today: true,
+        threshold: 4,
+        selected_date: formatDateToInput(/* @__PURE__ */ new Date()),
+        days: calendar
+      };
+      CalendarManager.getSelf().context.store?.set(card.id, initialData);
+      return { status: true };
+    } catch (error) {
+      return {
+        status: false,
+        message: "Failed to create card data",
+        error: error instanceof Error ? error : void 0
+      };
+    }
   }
-  async onDelete(cardName) {
-    const request = await this.db.deleteData(cardName);
-    return request;
+  async onDelete(card) {
+    try {
+      CalendarManager.getSelf().context.store?.remove(card.id);
+      return { status: true };
+    } catch (error) {
+      return {
+        status: false,
+        message: "Failed to delete card data",
+        error: error instanceof Error ? error : void 0
+      };
+    }
   }
-  async onLoad(card, app) {
-    const data = await this.db.getData(card.name);
-    if (!data) return false;
-    CalendarManager.getSelf().addCalendar({ card: card.name, data });
-    CalendarManager.getSelf().adjustContext({ db: this.db, toolEvent: card.toolEvent, app });
-    const targetContainer = document.getElementById(card.containerID);
-    if (targetContainer) {
+  async onLoad(card) {
+    try {
+      const store = CalendarManager.getSelf().context.store;
+      const data = store.get(card.id);
+      if (!data) {
+        return {
+          status: false,
+          message: "No persisted data found for card"
+        };
+      }
+      const targetContainer = document.getElementById(card.id);
+      if (!targetContainer) {
+        return {
+          status: false,
+          message: `DOM container not found for card id: ${card.id}`
+        };
+      }
       const dispose2 = createRoot((dispose3) => {
-        render(
-          () => App({ cardName: card.name }),
-          targetContainer
-        );
+        render(() => App({ cardId: card.id }), targetContainer);
         return dispose3;
       });
-      this.roots.set(card.name, dispose2);
-      return true;
+      this.roots.set(card.id, dispose2);
+      return { status: true };
+    } catch (error) {
+      return {
+        status: false,
+        message: "Failed to load card UI",
+        error: error instanceof Error ? error : void 0
+      };
     }
-    return false;
   }
-  onUnload(cardName) {
-    const dispose2 = this.roots.get(cardName);
-    if (dispose2) {
-      dispose2();
-      this.roots.delete(cardName);
+  async onUnload(cardId) {
+    try {
+      const dispose2 = this.roots.get(cardId);
+      if (dispose2) {
+        dispose2();
+        this.roots.delete(cardId);
+      }
+      return { status: true };
+    } catch (error) {
+      return {
+        status: false,
+        message: "Failed to unload card resources",
+        error: error instanceof Error ? error : void 0
+      };
     }
   }
 };

@@ -1,6 +1,7 @@
-import { DataType } from "./DataType"
+import { DataType } from "./DataType";
+import { CardType } from "./hollow";
 
 export type CalendarType = {
-	card: string,
-	data: DataType
-}
+	card: CardType;
+	data: DataType;
+};
