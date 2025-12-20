@@ -25,6 +25,7 @@ export default class Main implements IPlugin {
 	private roots: Map<string, () => void> = new Map();
 
 	constructor(app: AppApi, toolEvent: ToolApi) {
+		console.log("[Test]: new-version");
 		const store = toolEvent.getData("config");
 		CalendarManager.getSelf().adjustContext({
 			store,

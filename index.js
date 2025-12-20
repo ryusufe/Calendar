@@ -2071,6 +2071,7 @@ var calendar = [
 var Main = class {
   roots = /* @__PURE__ */ new Map();
   constructor(app, toolEvent) {
+    console.log("[Test]: new-version");
     const store = toolEvent.getData("config");
     CalendarManager.getSelf().adjustContext({
       store,
